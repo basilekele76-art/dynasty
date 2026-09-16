@@ -1,0 +1,1175 @@
+/* ========================================
+   RESET
+======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: #101322;
+    color: #ffffff;
+    min-height: 100vh;
+    overflow-x: hidden;
+    transition: 0.4s ease;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+    border: none;
+}
+
+
+/* ========================================
+   SIDEBAR
+======================================== */
+
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+
+    width: 260px;
+    height: 100vh;
+
+    padding: 30px 20px;
+
+    background: rgba(12, 15, 30, 0.92);
+
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+
+    display: flex;
+    flex-direction: column;
+
+    z-index: 100;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    margin-bottom: 55px;
+}
+
+.brand-icon {
+    width: 45px;
+    height: 45px;
+
+    border-radius: 14px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: linear-gradient(135deg, #ff4ecd, #6c63ff);
+
+    box-shadow: 0 10px 30px rgba(108, 99, 255, 0.35);
+}
+
+.brand h2 {
+    font-size: 20px;
+    letter-spacing: 2px;
+}
+
+.brand p {
+    color: #9ea4bd;
+    font-size: 10px;
+    line-height: 1.3;
+}
+
+.navigation {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.nav-btn {
+    width: 100%;
+
+    padding: 14px 16px;
+
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    color: #9ea4bd;
+
+    background: transparent;
+
+    border-radius: 14px;
+
+    text-align: left;
+
+    transition: 0.3s ease;
+}
+
+.nav-btn i {
+    width: 20px;
+    text-align: center;
+}
+
+.nav-btn:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.07);
+    transform: translateX(4px);
+}
+
+.nav-btn.active {
+    color: #ffffff;
+
+    background: linear-gradient(
+        90deg,
+        rgba(108, 99, 255, 0.3),
+        rgba(255, 78, 205, 0.12)
+    );
+
+    box-shadow: inset 3px 0 #8b7cff;
+}
+
+.sidebar-bottom {
+    margin-top: auto;
+
+    display: flex;
+    justify-content: space-between;
+
+    color: #666c82;
+
+    font-size: 12px;
+}
+
+.sidebar-bottom strong {
+    color: #ffffff;
+}
+
+
+/* ========================================
+   MAIN CONTENT
+======================================== */
+
+.main-content {
+    margin-left: 260px;
+    min-height: 100vh;
+}
+
+.page {
+    min-height: 100vh;
+
+    padding: 70px 8%;
+
+    display: none;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.page.active-page {
+    display: block;
+}
+
+
+/* ========================================
+   HOME
+======================================== */
+
+#home {
+    min-height: 100vh;
+
+    display: none;
+
+    background:
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(255, 78, 205, 0.35),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 20% 80%,
+            rgba(0, 212, 255, 0.25),
+            transparent 30%
+        ),
+        linear-gradient(
+            145deg,
+            #11152b,
+            #302064,
+            #712d68,
+            #174c67
+        );
+}
+
+#home.active-page {
+    display: block;
+}
+
+.home-content {
+    position: relative;
+    z-index: 5;
+
+    max-width: 720px;
+
+    padding-top: 100px;
+}
+
+.small-label,
+.section-label {
+    display: inline-block;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 4px;
+
+    color: #f5a7ff;
+
+    margin-bottom: 15px;
+}
+
+.home-content h1 {
+    font-size: clamp(70px, 12vw, 150px);
+
+    line-height: 0.9;
+
+    letter-spacing: -8px;
+
+    margin-bottom: 20px;
+}
+
+.home-content h1 span {
+    background: linear-gradient(
+        90deg,
+        #ffffff,
+        #ffb7f2,
+        #7cecff
+    );
+
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.home-content h2 {
+    font-size: clamp(22px, 3vw, 38px);
+
+    font-weight: 400;
+
+    color: #ffffff;
+
+    margin-bottom: 20px;
+}
+
+.home-description {
+    max-width: 600px;
+
+    color: #d0d3e1;
+
+    line-height: 1.8;
+
+    font-size: 15px;
+
+    margin-bottom: 35px;
+}
+
+.home-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.primary-btn,
+.secondary-btn {
+    padding: 14px 22px;
+
+    border-radius: 14px;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    font-weight: 600;
+
+    transition: 0.3s ease;
+}
+
+.primary-btn {
+    color: white;
+
+    background: linear-gradient(
+        135deg,
+        #7c6cff,
+        #ff4ecd
+    );
+
+    box-shadow: 0 15px 35px rgba(124, 108, 255, 0.3);
+}
+
+.secondary-btn {
+    color: white;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.primary-btn:hover,
+.secondary-btn:hover {
+    transform: translateY(-4px);
+}
+
+.dynasty-statement {
+    position: absolute;
+
+    right: 8%;
+    top: 18%;
+
+    font-size: clamp(30px, 5vw, 75px);
+
+    font-weight: 800;
+
+    line-height: 0.95;
+
+    max-width: 430px;
+
+    text-align: right;
+
+    color: rgba(255, 255, 255, 0.08);
+
+    z-index: 1;
+
+    pointer-events: none;
+}
+
+
+/* ========================================
+   CHARACTER
+======================================== */
+
+.character {
+    position: absolute;
+
+    right: 10%;
+    bottom: 10%;
+
+    width: 190px;
+    height: 260px;
+
+    z-index: 6;
+
+    animation: floating 4s ease-in-out infinite;
+}
+
+@keyframes floating {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-18px);
+    }
+}
+
+.ear {
+    position: absolute;
+
+    width: 75px;
+    height: 75px;
+
+    border-radius: 50%;
+
+    background: #e98bbd;
+
+    border: 10px solid #353744;
+
+    top: 5px;
+
+    z-index: 0;
+}
+
+.ear-left {
+    left: 0;
+}
+
+.ear-right {
+    right: 0;
+}
+
+.head {
+    position: absolute;
+
+    left: 20px;
+    top: 25px;
+
+    width: 150px;
+    height: 145px;
+
+    border-radius: 48%;
+
+    background: #3b3d49;
+
+    z-index: 2;
+
+    box-shadow: inset -12px -10px rgba(0, 0, 0, 0.12);
+}
+
+.eye {
+    position: absolute;
+
+    top: 48px;
+
+    width: 35px;
+    height: 42px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    overflow: hidden;
+}
+
+.eye-left {
+    left: 30px;
+}
+
+.eye-right {
+    right: 30px;
+}
+
+.pupil {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 15px;
+    height: 18px;
+
+    border-radius: 50%;
+
+    background: #111;
+
+    transform: translate(-50%, -50%);
+
+    transition: transform 0.08s linear;
+}
+
+.nose {
+    position: absolute;
+
+    left: 50%;
+    bottom: 30px;
+
+    transform: translateX(-50%);
+
+    width: 15px;
+    height: 11px;
+
+    border-radius: 50%;
+
+    background: #f29abf;
+}
+
+.mouth {
+    position: absolute;
+
+    left: 50%;
+    bottom: 17px;
+
+    width: 25px;
+    height: 10px;
+
+    border-bottom: 3px solid #171820;
+
+    border-radius: 50%;
+
+    transform: translateX(-50%);
+}
+
+.body {
+    position: absolute;
+
+    left: 42px;
+    top: 145px;
+
+    width: 105px;
+    height: 100px;
+
+    border-radius: 45%;
+
+    background: #343640;
+
+    z-index: 1;
+}
+
+.belly {
+    position: absolute;
+
+    width: 65px;
+    height: 70px;
+
+    left: 20px;
+    top: 15px;
+
+    border-radius: 50%;
+
+    background: #e7d7c5;
+}
+
+.tail {
+    position: absolute;
+
+    right: -5px;
+    bottom: 25px;
+
+    width: 70px;
+    height: 50px;
+
+    border: 8px solid #343640;
+
+    border-left: none;
+
+    border-radius: 0 50% 50% 0;
+
+    transform: rotate(-15deg);
+}
+
+.floating-shape {
+    position: absolute;
+
+    border-radius: 50%;
+
+    filter: blur(1px);
+
+    opacity: 0.5;
+
+    animation: drift 8s ease-in-out infinite;
+}
+
+.shape-one {
+    width: 90px;
+    height: 90px;
+
+    background: #ff4ecd;
+
+    right: 35%;
+    top: 15%;
+}
+
+.shape-two {
+    width: 60px;
+    height: 60px;
+
+    background: #00d4ff;
+
+    left: 30%;
+    bottom: 10%;
+}
+
+.shape-three {
+    width: 45px;
+    height: 45px;
+
+    background: #ffe66d;
+
+    right: 25%;
+    bottom: 30%;
+}
+
+@keyframes drift {
+    0%, 100% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(25px, -30px);
+    }
+}
+
+
+/* ========================================
+   PAGE HEADINGS
+======================================== */
+
+.page-heading {
+    margin-bottom: 45px;
+}
+
+.page-heading h1 {
+    font-size: clamp(40px, 6vw, 75px);
+
+    line-height: 1;
+
+    margin-bottom: 15px;
+}
+
+.page-heading p {
+    color: #aeb3c6;
+
+    max-width: 600px;
+
+    line-height: 1.7;
+}
+
+
+/* ========================================
+   SETTINGS
+======================================== */
+
+.setting-card {
+    max-width: 850px;
+
+    padding: 28px;
+
+    margin-bottom: 20px;
+
+    border-radius: 22px;
+
+    background: rgba(255, 255, 255, 0.06);
+
+    border: 1px solid rgba(255, 255, 255, 0.09);
+
+    backdrop-filter: blur(20px);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 25px;
+}
+
+.setting-info h3 {
+    font-size: 20px;
+
+    margin-bottom: 7px;
+}
+
+.setting-info p {
+    color: #969caf;
+
+    font-size: 14px;
+}
+
+.theme-buttons,
+.texture-buttons {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.option-btn {
+    padding: 11px 15px;
+
+    border-radius: 12px;
+
+    color: #b7bbcb;
+
+    background: rgba(255, 255, 255, 0.07);
+
+    transition: 0.3s ease;
+}
+
+.option-btn:hover,
+.option-btn.selected {
+    color: white;
+
+    background: #6759dc;
+}
+
+
+/* ========================================
+   LIBRARY
+======================================== */
+
+.poetry-list {
+    max-width: 900px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+.poem-title-btn {
+    width: 100%;
+
+    padding: 25px 28px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    text-align: left;
+
+    color: white;
+
+    background: rgba(255, 255, 255, 0.06);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 18px;
+
+    transition: 0.3s ease;
+}
+
+.poem-title-btn span:first-child {
+    font-size: 19px;
+
+    font-weight: 600;
+}
+
+.poem-number {
+    color: #9d91ff;
+
+    margin-right: 15px;
+}
+
+.poem-title-btn i {
+    color: #9298b0;
+
+    transition: 0.3s ease;
+}
+
+.poem-title-btn:hover {
+    background: rgba(124, 108, 255, 0.18);
+
+    border-color: rgba(157, 145, 255, 0.35);
+
+    transform: translateX(8px);
+}
+
+.poem-title-btn:hover i {
+    color: white;
+
+    transform: translateX(5px);
+}
+
+
+/* ========================================
+   POEM READER
+======================================== */
+
+.poem-page {
+    background:
+        radial-gradient(
+            circle at 80% 10%,
+            rgba(255, 78, 205, 0.12),
+            transparent 30%
+        );
+}
+
+.back-btn {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 12px 18px;
+
+    border-radius: 12px;
+
+    color: #c2c6d6;
+
+    background: rgba(255, 255, 255, 0.06);
+
+    margin-bottom: 55px;
+
+    transition: 0.3s ease;
+}
+
+.back-btn:hover {
+    color: white;
+
+    transform: translateX(-4px);
+}
+
+.poem-container {
+    max-width: 800px;
+
+    margin: 0 auto;
+
+    padding-bottom: 100px;
+}
+
+.poem-container h1 {
+    font-size: clamp(40px, 7vw, 80px);
+
+    line-height: 1.05;
+
+    margin-bottom: 30px;
+}
+
+.poem-divider {
+    width: 90px;
+    height: 4px;
+
+    border-radius: 10px;
+
+    background: linear-gradient(
+        90deg,
+        #7c6cff,
+        #ff4ecd
+    );
+
+    margin-bottom: 40px;
+}
+
+.poem-text {
+    white-space: pre-line;
+
+    font-family: Georgia, serif;
+
+    font-size: 19px;
+
+    line-height: 2;
+
+    color: #d9dbe5;
+}
+
+.poem-signature {
+    margin-top: 50px;
+
+    font-family: Georgia, serif;
+
+    font-style: italic;
+
+    color: #9d91ff;
+}
+
+
+/* ========================================
+   SHARE
+======================================== */
+
+.share-card {
+    max-width: 600px;
+
+    padding: 45px;
+
+    text-align: center;
+
+    border-radius: 25px;
+
+    background: rgba(255, 255, 255, 0.06);
+
+    border: 1px solid rgba(255, 255, 255, 0.09);
+
+    backdrop-filter: blur(20px);
+}
+
+.share-icon {
+    width: 70px;
+    height: 70px;
+
+    margin: 0 auto 20px;
+
+    border-radius: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 25px;
+
+    background: linear-gradient(
+        135deg,
+        #7c6cff,
+        #ff4ecd
+    );
+}
+
+.share-card h2 {
+    margin-bottom: 10px;
+}
+
+.share-card p {
+    color: #9fa4b8;
+
+    margin-bottom: 25px;
+}
+
+
+/* ========================================
+   LANGUAGE
+======================================== */
+
+.language-grid {
+    max-width: 800px;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 15px;
+}
+
+.language-card {
+    padding: 22px;
+
+    border-radius: 18px;
+
+    color: white;
+
+    background: rgba(255, 255, 255, 0.06);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    text-align: left;
+
+    transition: 0.3s ease;
+}
+
+.language-card:hover {
+    transform: translateY(-4px);
+
+    background: rgba(124, 108, 255, 0.15);
+}
+
+.language-card.selected-language {
+    border-color: #7c6cff;
+
+    background: rgba(124, 108, 255, 0.16);
+}
+
+.flag {
+    font-size: 30px;
+}
+
+.language-card span:nth-child(2) {
+    display: flex;
+
+    flex-direction: column;
+
+    flex: 1;
+}
+
+.language-card strong {
+    font-size: 16px;
+}
+
+.language-card small {
+    color: #8f94a8;
+
+    margin-top: 3px;
+}
+
+.language-check {
+    opacity: 0;
+    color: #9d91ff;
+}
+
+.selected-language .language-check {
+    opacity: 1;
+}
+
+
+/* ========================================
+   LIGHT MODE
+======================================== */
+
+body.light {
+    background: #f3f4fa;
+
+    color: #171927;
+}
+
+body.light .sidebar {
+    background: rgba(255, 255, 255, 0.95);
+
+    border-right-color: rgba(0, 0, 0, 0.08);
+}
+
+body.light .brand p,
+body.light .nav-btn,
+body.light .sidebar-bottom {
+    color: #73788b;
+}
+
+body.light .nav-btn.active {
+    color: #22243a;
+}
+
+body.light .nav-btn:hover {
+    color: #22243a;
+
+    background: rgba(0, 0, 0, 0.05);
+}
+
+body.light .sidebar-bottom strong {
+    color: #22243a;
+}
+
+body.light .page:not(#home) {
+    background: #f3f4fa;
+}
+
+body.light .page-heading p,
+body.light .setting-info p {
+    color: #70758a;
+}
+
+body.light .setting-card,
+body.light .poem-title-btn,
+body.light .language-card,
+body.light .share-card,
+body.light .back-btn,
+body.light .option-btn {
+    color: #202236;
+
+    background: rgba(255, 255, 255, 0.8);
+
+    border-color: rgba(0, 0, 0, 0.08);
+}
+
+body.light .poem-text {
+    color: #44485b;
+}
+
+body.light .language-card small {
+    color: #777c90;
+}
+
+
+/* ========================================
+   TEXTURES
+======================================== */
+
+body.texture-dots .page:not(#home) {
+    background-image: radial-gradient(
+        rgba(120, 120, 150, 0.2) 1px,
+        transparent 1px
+    );
+
+    background-size: 20px 20px;
+}
+
+body.texture-grid .page:not(#home) {
+    background-image:
+        linear-gradient(
+            rgba(120, 120, 150, 0.08) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(120, 120, 150, 0.08) 1px,
+            transparent 1px
+        );
+
+    background-size: 35px 35px;
+}
+
+body.texture-plain .page:not(#home) {
+    background-image: none;
+}
+
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 850px) {
+
+    .sidebar {
+        width: 80px;
+
+        padding: 25px 12px;
+    }
+
+    .brand {
+        justify-content: center;
+    }
+
+    .brand > div:last-child,
+    .nav-btn span,
+    .sidebar-bottom {
+        display: none;
+    }
+
+    .nav-btn {
+        justify-content: center;
+        padding: 15px;
+    }
+
+    .main-content {
+        margin-left: 80px;
+    }
+
+    .page {
+        padding: 55px 6%;
+    }
+
+    .character {
+        opacity: 0.35;
+
+        right: 5%;
+    }
+
+    .dynasty-statement {
+        top: 12%;
+        right: 6%;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .sidebar {
+        width: 65px;
+    }
+
+    .main-content {
+        margin-left: 65px;
+    }
+
+    .home-content {
+        padding-top: 50px;
+    }
+
+    .home-content h1 {
+        letter-spacing: -4px;
+    }
+
+    .character {
+        transform: scale(0.75);
+
+        right: -10px;
+        bottom: 5%;
+    }
+
+    .language-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .setting-card {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .poem-text {
+        font-size: 17px;
+    }
+}
+/* PER-POEM COMMENT SECTION */
+.comment-section { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #eee; }
+.comment-title { font-size: 1.2rem; margin-bottom: 1rem; }
+.comment-list { display: flex; flex-direction: column; gap: 1rem; margin-bottom: 1.5rem; }
+.comment-item { background: #f9f9f9; padding: 1rem; border-radius: 10px; }
+.comment-item strong { display: block; font-size: 0.9rem; margin-bottom: 0.3rem; }
+.comment-form { display: flex; flex-direction: column; gap: 0.7rem; }
+.comment-form input,.comment-form textarea { width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 8px; font-family: inherit; }
+.comment-form button { align-self: flex-start; padding: 0.7rem 1.5rem; border: none; border-radius: 8px; cursor: pointer; background: black; color: white; }
