@@ -1,132 +1,243 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>DYNASTY — A World That Follows You</title>
 
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
 
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <!-- Dynasty CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 
+
 <body>
 
-    <!-- =========================
+    <!-- =====================================================
          SIDEBAR
-    ========================== -->
+    ====================================================== -->
 
     <aside class="sidebar">
 
+        <!-- BRAND -->
         <div class="brand">
+
             <div class="brand-icon">
                 <i class="fa-solid fa-crown"></i>
             </div>
 
-            <div>
+            <div class="brand-text">
                 <h2>DYNASTY</h2>
-                <p data-i18n="tagline">A world that follows you.</p>
+
+                <p data-i18n="tagline">
+                    A world that follows you.
+                </p>
             </div>
+
         </div>
 
+
+        <!-- NAVIGATION -->
         <nav class="navigation">
 
-            <button class="nav-btn active" data-page="home">
+            <!-- HOME -->
+            <button
+                type="button"
+                class="nav-btn active"
+                data-page="home"
+            >
                 <i class="fa-solid fa-house"></i>
-                <span data-i18n="home">Home</span>
+
+                <span data-i18n="home">
+                    Home
+                </span>
             </button>
 
-            <button class="nav-btn" data-page="settings">
+
+            <!-- SETTINGS -->
+            <button
+                type="button"
+                class="nav-btn"
+                data-page="settings"
+            >
                 <i class="fa-solid fa-gear"></i>
-                <span data-i18n="settings">Settings</span>
+
+                <span data-i18n="settings">
+                    Settings
+                </span>
             </button>
 
-            <button class="nav-btn" data-page="library">
+
+            <!-- LIBRARY -->
+            <button
+                type="button"
+                class="nav-btn"
+                data-page="library"
+            >
                 <i class="fa-solid fa-book-open"></i>
-                <span data-i18n="library">Library</span>
+
+                <span data-i18n="library">
+                    Library
+                </span>
             </button>
 
-            <button class="nav-btn" data-page="share">
+
+            <!-- SHARE -->
+            <button
+                type="button"
+                class="nav-btn"
+                data-page="share"
+            >
                 <i class="fa-solid fa-share-nodes"></i>
-                <span data-i18n="share">Share</span>
+
+                <span data-i18n="share">
+                    Share
+                </span>
             </button>
 
-            <button class="nav-btn" data-page="language">
+
+            <!-- LANGUAGE -->
+            <button
+                type="button"
+                class="nav-btn"
+                data-page="language"
+            >
                 <i class="fa-solid fa-globe"></i>
-                <span data-i18n="language">Language</span>
+
+                <span data-i18n="language">
+                    Language
+                </span>
             </button>
 
         </nav>
 
+
+        <!-- SIDEBAR FOOTER -->
         <div class="sidebar-bottom">
-            <span>© 2026</span>
-            <strong>kels</strong>
+
+            <span>
+                © 2026
+            </span>
+
+            <strong>
+                kels
+            </strong>
+
         </div>
 
     </aside>
 
 
-    <!-- =========================
+
+    <!-- =====================================================
          MAIN CONTENT
-    ========================== -->
+    ====================================================== -->
 
     <main class="main-content">
 
-        <!-- =========================
-             HOME
-        ========================== -->
 
-        <section class="page active-page" id="home">
+        <!-- =================================================
+             HOME PAGE
+        ================================================== -->
+
+        <section
+            class="page active"
+            id="home"
+        >
+
+            <!-- FLOATING SHAPES -->
 
             <div class="floating-shape shape-one"></div>
             <div class="floating-shape shape-two"></div>
             <div class="floating-shape shape-three"></div>
 
+
+            <!-- HOME CONTENT -->
+
             <div class="home-content">
 
-                <p class="small-label" data-i18n="welcome">
+                <p
+                    class="small-label"
+                    data-i18n="welcome"
+                >
                     WELCOME TO
                 </p>
+
 
                 <h1>
                     <span>DYNASTY</span>
                 </h1>
 
+
                 <h2 data-i18n="homeTagline">
                     A world that follows you.
                 </h2>
 
-                <p class="home-description" data-i18n="homeDescription">
+
+                <p
+                    class="home-description"
+                    data-i18n="homeDescription"
+                >
                     Welcome to a colourful world built around imagination,
                     interaction and words. Move, explore and discover.
                 </p>
 
+
+                <!-- HOME BUTTONS -->
+
                 <div class="home-buttons">
 
-                    <button class="primary-btn" data-page="library">
+                    <button
+                        type="button"
+                        class="primary-btn"
+                        data-page="library"
+                    >
+
                         <i class="fa-solid fa-book-open"></i>
+
                         <span data-i18n="enterLibrary">
                             Enter Library
                         </span>
+
                     </button>
 
-                    <button class="secondary-btn" data-page="settings">
+
+                    <button
+                        type="button"
+                        class="secondary-btn"
+                        data-page="settings"
+                    >
+
                         <i class="fa-solid fa-wand-magic-sparkles"></i>
+
                         <span data-i18n="customize">
                             Customize
                         </span>
+
                     </button>
 
                 </div>
 
             </div>
 
+
+            <!-- DYNASTY STATEMENT -->
 
             <div class="dynasty-statement">
 
@@ -137,32 +248,58 @@
             </div>
 
 
-            <!-- Interactive character -->
+            <!-- =================================================
+                 INTERACTIVE CHARACTER
+            ================================================== -->
 
             <div class="character">
+
+                <!-- EARS -->
 
                 <div class="ear ear-left"></div>
                 <div class="ear ear-right"></div>
 
+
+                <!-- HEAD -->
+
                 <div class="head">
 
+                    <!-- LEFT EYE -->
+
                     <div class="eye eye-left">
+
                         <div class="pupil"></div>
+
                     </div>
+
+
+                    <!-- RIGHT EYE -->
 
                     <div class="eye eye-right">
+
                         <div class="pupil"></div>
+
                     </div>
 
-                    <div class="nose"></div>
 
+                    <!-- FACE -->
+
+                    <div class="nose"></div>
                     <div class="mouth"></div>
 
                 </div>
 
+
+                <!-- BODY -->
+
                 <div class="body">
+
                     <div class="belly"></div>
+
                 </div>
+
+
+                <!-- TAIL -->
 
                 <div class="tail"></div>
 
@@ -171,21 +308,30 @@
         </section>
 
 
-        <!-- =========================
-             SETTINGS
-        ========================== -->
 
-        <section class="page" id="settings">
+        <!-- =====================================================
+             SETTINGS PAGE
+        ====================================================== -->
+
+        <section
+            class="page"
+            id="settings"
+        >
 
             <div class="page-heading">
 
-                <span class="section-label" data-i18n="settingsLabel">
+                <span
+                    class="section-label"
+                    data-i18n="settingsLabel"
+                >
                     PERSONALIZE
                 </span>
+
 
                 <h1 data-i18n="settingsTitle">
                     Settings
                 </h1>
+
 
                 <p data-i18n="settingsDescription">
                     Make Dynasty feel like your own world.
@@ -194,6 +340,10 @@
             </div>
 
 
+            <!-- =================================================
+                 THEME SETTINGS
+            ================================================== -->
+
             <div class="setting-card">
 
                 <div class="setting-info">
@@ -201,6 +351,7 @@
                     <h3 data-i18n="themeTitle">
                         Theme
                     </h3>
+
 
                     <p data-i18n="themeDescription">
                         Choose how Dynasty looks.
@@ -211,24 +362,48 @@
 
                 <div class="theme-buttons">
 
-                    <button class="option-btn selected" data-theme="dark">
+                    <!-- DARK -->
+
+                    <button
+                        type="button"
+                        class="option-btn selected"
+                        data-theme="dark"
+                    >
+
                         <i class="fa-solid fa-moon"></i>
+
                         <span data-i18n="dark">
                             Dark
                         </span>
+
                     </button>
 
-                    <button class="option-btn" data-theme="light">
+
+                    <!-- LIGHT -->
+
+                    <button
+                        type="button"
+                        class="option-btn"
+                        data-theme="light"
+                    >
+
                         <i class="fa-solid fa-sun"></i>
+
                         <span data-i18n="light">
                             Light
                         </span>
+
                     </button>
 
                 </div>
 
             </div>
 
+
+
+            <!-- =================================================
+                 BACKGROUND / TEXTURES
+            ================================================== -->
 
             <div class="setting-card">
 
@@ -237,6 +412,7 @@
                     <h3 data-i18n="backgroundTitle">
                         Background
                     </h3>
+
 
                     <p data-i18n="backgroundDescription">
                         Choose a background style.
@@ -247,25 +423,156 @@
 
                 <div class="texture-buttons">
 
-                    <button class="option-btn" data-texture="dots">
+                    <!-- DOTS -->
+
+                    <button
+                        type="button"
+                        class="option-btn"
+                        data-texture="dots"
+                    >
+
                         <i class="fa-solid fa-grip"></i>
+
                         <span data-i18n="dots">
                             Dots
                         </span>
+
                     </button>
 
-                    <button class="option-btn" data-texture="grid">
+
+                    <!-- GRID -->
+
+                    <button
+                        type="button"
+                        class="option-btn"
+                        data-texture="grid"
+                    >
+
                         <i class="fa-solid fa-table-cells"></i>
+
                         <span data-i18n="grid">
                             Grid
                         </span>
+
                     </button>
 
-                    <button class="option-btn" data-texture="plain">
+
+                    <!-- PLAIN -->
+
+                    <button
+                        type="button"
+                        class="option-btn"
+                        data-texture="plain"
+                    >
+
                         <i class="fa-solid fa-square"></i>
+
                         <span data-i18n="plain">
                             Plain
                         </span>
+
+                    </button>
+
+
+                    <!-- DIAGONAL -->
+
+                    <button
+                        type="button"
+                        class="option-btn"
+                        data-texture="diagonal"
+                    >
+
+                        <i class="fa-solid fa-slash"></i>
+
+                        <span data-i18n="diagonal">
+                            Diagonal
+                        </span>
+
+                    </button>
+
+
+                    <!-- CROSSHATCH -->
+
+                    <button
+                        type="button"
+                        class="option-btn"
+                        data-texture="crosshatch"
+                    >
+
+                        <i class="fa-solid fa-grip-lines"></i>
+
+                        <span data-i18n="crosshatch">
+                            Crosshatch
+                        </span>
+
+                    </button>
+
+
+                    <!-- WAVES -->
+
+                    <button
+                        type="button"
+                        class="option-btn"
+                        data-texture="waves"
+                    >
+
+                        <i class="fa-solid fa-water"></i>
+
+                        <span data-i18n="waves">
+                            Waves
+                        </span>
+
+                    </button>
+
+
+                    <!-- BLUEPRINT -->
+
+                    <button
+                        type="button"
+                        class="option-btn"
+                        data-texture="blueprint"
+                    >
+
+                        <i class="fa-solid fa-drafting-compass"></i>
+
+                        <span data-i18n="blueprint">
+                            Blueprint
+                        </span>
+
+                    </button>
+
+
+                    <!-- NOISE -->
+
+                    <button
+                        type="button"
+                        class="option-btn"
+                        data-texture="noise"
+                    >
+
+                        <i class="fa-solid fa-cloud"></i>
+
+                        <span data-i18n="noise">
+                            Noise
+                        </span>
+
+                    </button>
+
+
+                    <!-- HEXAGONS -->
+
+                    <button
+                        type="button"
+                        class="option-btn"
+                        data-texture="hexagons"
+                    >
+
+                        <i class="fa-solid fa-shapes"></i>
+
+                        <span data-i18n="hexagons">
+                            Hexagons
+                        </span>
+
                     </button>
 
                 </div>
@@ -275,21 +582,30 @@
         </section>
 
 
-        <!-- =========================
-             LIBRARY
-        ========================== -->
 
-                <section class="page" id="library">
+        <!-- =====================================================
+             LIBRARY PAGE
+        ====================================================== -->
+
+        <section
+            class="page"
+            id="library"
+        >
 
             <div class="page-heading">
 
-                <span class="section-label" data-i18n="libraryLabel">
+                <span
+                    class="section-label"
+                    data-i18n="libraryLabel"
+                >
                     THE ARCHIVE
                 </span>
+
 
                 <h1 data-i18n="libraryTitle">
                     Library
                 </h1>
+
 
                 <p data-i18n="libraryDescription">
                     Every piece is a world of its own.
@@ -297,32 +613,86 @@
 
             </div>
 
-            <!-- TRENDING ADDED - THIS WAS MISSING -->
-            <div id="trendingSection" style="display:none; margin-bottom: 30px; background: rgba(255,255,255,0.05); padding: 20px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.1);">
-                <h3 style="margin-bottom:15px; font-size:1.1rem;">🔥 Trending Now</h3>
-                <div id="trendingList" style="display:flex; gap:12px; flex-wrap:wrap;"></div>
+
+            <!-- =================================================
+                 TRENDING
+            ================================================== -->
+
+            <div
+                id="trendingSection"
+                class="trending-section"
+            >
+
+                <h3
+                    data-i18n="trendingTitle"
+                >
+                    🔥 Trending Now
+                </h3>
+
+
+                <div
+                    id="trendingList"
+                    class="trending-list"
+                ></div>
+
             </div>
 
-            <!-- ONLY TITLES SHOW HERE -->
 
-            <div class="poetry-list" id="poetryList">
 
-            <div class="poetry-list" id="poetryList">
+            <!-- =================================================
+                 POEM SEARCH
+            ================================================== -->
 
-                <!-- JavaScript will create the poem titles -->
+            <div class="poem-search">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+
+                <input
+                    type="text"
+                    id="poemSearch"
+                    placeholder="Search poem titles..."
+                    data-i18n-placeholder="searchPoems"
+                    autocomplete="off"
+                >
+
+            </div>
+
+
+
+            <!-- =================================================
+                 POEM TITLES
+            ================================================== -->
+
+            <div
+                class="poetry-list"
+                id="poemList"
+            >
+
+                <!-- JavaScript inserts poem titles here -->
 
             </div>
 
         </section>
 
 
-        <!-- =========================
-             POEM READER
-        ========================== -->
 
-        <section class="page poem-page" id="poemReader">
+        <!-- =====================================================
+             POEM READER PAGE
+        ====================================================== -->
 
-            <button class="back-btn" id="backToLibrary">
+        <section
+            class="page poem-page"
+            id="poemReader"
+        >
+
+            <!-- BACK BUTTON -->
+
+            <button
+                type="button"
+                class="back-btn"
+                id="backToLibrary"
+            >
 
                 <i class="fa-solid fa-arrow-left"></i>
 
@@ -333,54 +703,174 @@
             </button>
 
 
+
+            <!-- POEM -->
+
             <article class="poem-container">
 
-                <span class="section-label" data-i18n="poemLabel">
+                <span
+                    class="section-label"
+                    data-i18n="poemLabel"
+                >
                     DYNASTY LIBRARY
                 </span>
+
 
                 <h1 id="poemTitle">
                     Poem Title
                 </h1>
 
+
                 <div class="poem-divider"></div>
 
-                <div class="poem-text" id="poemText">
-                    <!-- Poem appears here -->
+
+                <div
+                    class="poem-text"
+                    id="poemText"
+                >
+                    <!-- Selected poem appears here -->
                 </div>
+
+
+                <!-- SIGNATURE -->
 
                 <div class="poem-signature">
                     — kels
                 </div>
-                <div class="comment-section">
-                    <h3 class="comment-title">Comments</h3>
-                    <div id="commentList" class="comment-list"></div>
-                    <div class="comment-form">
-                        <input type="text" id="commentName" placeholder="Your name" />
-                        <textarea id="commentText" placeholder="Write a comment on this poem..."></textarea>
-                        <button onclick="addComment()">Post Comment</button>
-                    </div>
+
+
+
+                <!-- =================================================
+                     POEM ACTIONS
+                ================================================== -->
+
+                <div class="poem-actions">
+
+                    <!-- LIKE -->
+
+                    <button
+                        type="button"
+                        id="likePoem"
+                        class="poem-action-btn"
+                    >
+
+                        <i class="fa-regular fa-heart"></i>
+
+                        <span data-i18n="like">
+                            Like
+                        </span>
+
+                        <span id="likeCount">
+                            0
+                        </span>
+
+                    </button>
+
+
+                    <!-- SHARE -->
+
+                    <button
+                        type="button"
+                        id="sharePoem"
+                        class="poem-action-btn"
+                    >
+
+                        <i class="fa-solid fa-share-nodes"></i>
+
+                        <span data-i18n="share">
+                            Share
+                        </span>
+
+                    </button>
+
                 </div>
+
+
+
+                <!-- =================================================
+                     COMMENTS
+                ================================================== -->
+
+                <div class="comment-section">
+
+                    <h3
+                        class="comment-title"
+                        data-i18n="commentsTitle"
+                    >
+                        Comments
+                    </h3>
+
+
+                    <!-- COMMENTS LIST -->
+
+                    <div
+                        id="commentList"
+                        class="comment-list"
+                    ></div>
+
+
+                    <!-- COMMENT FORM -->
+
+                    <div class="comment-form">
+
+                        <input
+                            type="text"
+                            id="commentName"
+                            placeholder="Your name"
+                            data-i18n-placeholder="commentName"
+                            autocomplete="off"
+                        >
+
+
+                        <textarea
+                            id="commentText"
+                            placeholder="Write a comment..."
+                            data-i18n-placeholder="commentPlaceholder"
+                            rows="4"
+                        ></textarea>
+
+
+                        <button
+                            type="button"
+                            onclick="addComment()"
+                            data-i18n="commentButton"
+                        >
+                            Post Comment
+                        </button>
+
+                    </div>
+
+                </div>
+
             </article>
 
         </section>
 
 
-        <!-- =========================
-             SHARE
-        ========================== -->
 
-        <section class="page" id="share">
+        <!-- =====================================================
+             SHARE PAGE
+        ====================================================== -->
+
+        <section
+            class="page"
+            id="share"
+        >
 
             <div class="page-heading">
 
-                <span class="section-label" data-i18n="shareLabel">
+                <span
+                    class="section-label"
+                    data-i18n="shareLabel"
+                >
                     SPREAD THE WORLD
                 </span>
+
 
                 <h1 data-i18n="shareTitle">
                     Share Dynasty
                 </h1>
+
 
                 <p data-i18n="shareDescription">
                     Let someone else discover your world.
@@ -389,21 +879,32 @@
             </div>
 
 
+            <!-- SHARE CARD -->
+
             <div class="share-card">
 
                 <div class="share-icon">
+
                     <i class="fa-solid fa-share-nodes"></i>
+
                 </div>
+
 
                 <h2 data-i18n="shareCardTitle">
                     Share this experience
                 </h2>
 
+
                 <p data-i18n="shareCardDescription">
                     Copy the link and send Dynasty to someone.
                 </p>
 
-                <button class="primary-btn" id="copyLink">
+
+                <button
+                    type="button"
+                    class="primary-btn"
+                    id="copyLink"
+                >
 
                     <i class="fa-solid fa-link"></i>
 
@@ -418,21 +919,30 @@
         </section>
 
 
-        <!-- =========================
-             LANGUAGE
-        ========================== -->
 
-        <section class="page" id="language">
+        <!-- =====================================================
+             LANGUAGE PAGE
+        ====================================================== -->
+
+        <section
+            class="page"
+            id="language"
+        >
 
             <div class="page-heading">
 
-                <span class="section-label" data-i18n="languageLabel">
+                <span
+                    class="section-label"
+                    data-i18n="languageLabel"
+                >
                     YOUR LANGUAGE
                 </span>
+
 
                 <h1 data-i18n="languageTitle">
                     Choose a Language
                 </h1>
+
 
                 <p data-i18n="languageDescription">
                     Change the language of the entire Dynasty experience.
@@ -441,62 +951,141 @@
             </div>
 
 
+
+            <!-- LANGUAGE OPTIONS -->
+
             <div class="language-grid">
 
-                <button class="language-card selected-language"
-                        data-language="en">
 
-                    <span class="flag">🇬🇧</span>
+                <!-- =================================================
+                     ENGLISH
+                ================================================== -->
 
-                    <span>
-                        <strong>English</strong>
-                        <small>English</small>
+                <button
+                    type="button"
+                    class="language-card selected"
+                    data-language="en"
+                >
+
+                    <span class="flag">
+                        🇬🇧
                     </span>
+
+
+                    <span class="language-name">
+
+                        <strong>
+                            English
+                        </strong>
+
+                        <small>
+                            English
+                        </small>
+
+                    </span>
+
 
                     <i class="fa-solid fa-check language-check"></i>
 
                 </button>
 
 
-                <button class="language-card"
-                        data-language="fr">
 
-                    <span class="flag">🇫🇷</span>
+                <!-- =================================================
+                     FRENCH
+                ================================================== -->
 
-                    <span>
-                        <strong>Français</strong>
-                        <small>French</small>
+                <button
+                    type="button"
+                    class="language-card"
+                    data-language="fr"
+                >
+
+                    <span class="flag">
+                        🇫🇷
                     </span>
+
+
+                    <span class="language-name">
+
+                        <strong>
+                            Français
+                        </strong>
+
+                        <small>
+                            French
+                        </small>
+
+                    </span>
+
 
                     <i class="fa-solid fa-check language-check"></i>
 
                 </button>
 
 
-                <button class="language-card"
-                        data-language="es">
 
-                    <span class="flag">🇪🇸</span>
+                <!-- =================================================
+                     SPANISH
+                ================================================== -->
 
-                    <span>
-                        <strong>Español</strong>
-                        <small>Spanish</small>
+                <button
+                    type="button"
+                    class="language-card"
+                    data-language="es"
+                >
+
+                    <span class="flag">
+                        🇪🇸
                     </span>
+
+
+                    <span class="language-name">
+
+                        <strong>
+                            Español
+                        </strong>
+
+                        <small>
+                            Spanish
+                        </small>
+
+                    </span>
+
 
                     <i class="fa-solid fa-check language-check"></i>
 
                 </button>
 
 
-                <button class="language-card"
-                        data-language="nl">
 
-                    <span class="flag">🇳🇱</span>
+                <!-- =================================================
+                     DUTCH
+                ================================================== -->
 
-                    <span>
-                        <strong>Nederlands</strong>
-                        <small>Dutch</small>
+                <button
+                    type="button"
+                    class="language-card"
+                    data-language="nl"
+                >
+
+                    <span class="flag">
+                        🇳🇱
                     </span>
+
+
+                    <span class="language-name">
+
+                        <strong>
+                            Nederlands
+                        </strong>
+
+                        <small>
+                            Dutch
+                        </small>
+
+                    </span>
+
 
                     <i class="fa-solid fa-check language-check"></i>
 
@@ -509,7 +1098,13 @@
     </main>
 
 
+
+    <!-- =====================================================
+         DYNASTY JAVASCRIPT
+    ====================================================== -->
+
     <script src="script.js"></script>
 
 </body>
+
 </html>
