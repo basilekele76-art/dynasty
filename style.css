@@ -1,4 +1,9 @@
 /* ========================================
+   DYNASTY — COMPLETE STYLE SHEET
+======================================== */
+
+
+/* ========================================
    RESET
 ======================================== */
 
@@ -18,7 +23,7 @@ body {
     color: #ffffff;
     min-height: 100vh;
     overflow-x: hidden;
-    transition: 0.4s ease;
+    transition: background 0.4s ease, color 0.4s ease;
 }
 
 button {
@@ -36,43 +41,34 @@ button {
     position: fixed;
     left: 0;
     top: 0;
-
     width: 260px;
     height: 100vh;
-
     padding: 30px 20px;
-
     background: rgba(12, 15, 30, 0.92);
-
     border-right: 1px solid rgba(255, 255, 255, 0.08);
-
     display: flex;
     flex-direction: column;
-
     z-index: 100;
+    backdrop-filter: blur(20px);
 }
 
 .brand {
     display: flex;
     align-items: center;
     gap: 12px;
-
     margin-bottom: 55px;
 }
 
 .brand-icon {
     width: 45px;
     height: 45px;
-
     border-radius: 14px;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     background: linear-gradient(135deg, #ff4ecd, #6c63ff);
-
     box-shadow: 0 10px 30px rgba(108, 99, 255, 0.35);
+    flex-shrink: 0;
 }
 
 .brand h2 {
@@ -94,21 +90,14 @@ button {
 
 .nav-btn {
     width: 100%;
-
     padding: 14px 16px;
-
     display: flex;
     align-items: center;
     gap: 15px;
-
     color: #9ea4bd;
-
     background: transparent;
-
     border-radius: 14px;
-
     text-align: left;
-
     transition: 0.3s ease;
 }
 
@@ -125,24 +114,19 @@ button {
 
 .nav-btn.active {
     color: #ffffff;
-
     background: linear-gradient(
         90deg,
         rgba(108, 99, 255, 0.3),
         rgba(255, 78, 205, 0.12)
     );
-
     box-shadow: inset 3px 0 #8b7cff;
 }
 
 .sidebar-bottom {
     margin-top: auto;
-
     display: flex;
     justify-content: space-between;
-
     color: #666c82;
-
     font-size: 12px;
 }
 
@@ -162,17 +146,13 @@ button {
 
 .page {
     min-height: 100vh;
-
     padding: 70px 8%;
-
     display: none;
-
     position: relative;
-
     overflow: hidden;
 }
 
-.page.active-page {
+.page.active {
     display: block;
 }
 
@@ -183,7 +163,6 @@ button {
 
 #home {
     min-height: 100vh;
-
     display: none;
 
     background:
@@ -206,40 +185,31 @@ button {
         );
 }
 
-#home.active-page {
+#home.active {
     display: block;
 }
 
 .home-content {
     position: relative;
     z-index: 5;
-
     max-width: 720px;
-
     padding-top: 100px;
 }
 
 .small-label,
 .section-label {
     display: inline-block;
-
     font-size: 12px;
     font-weight: 700;
-
     letter-spacing: 4px;
-
     color: #f5a7ff;
-
     margin-bottom: 15px;
 }
 
 .home-content h1 {
     font-size: clamp(70px, 12vw, 150px);
-
     line-height: 0.9;
-
     letter-spacing: -8px;
-
     margin-bottom: 20px;
 }
 
@@ -258,23 +228,16 @@ button {
 
 .home-content h2 {
     font-size: clamp(22px, 3vw, 38px);
-
     font-weight: 400;
-
     color: #ffffff;
-
     margin-bottom: 20px;
 }
 
 .home-description {
     max-width: 600px;
-
     color: #d0d3e1;
-
     line-height: 1.8;
-
     font-size: 15px;
-
     margin-bottom: 35px;
 }
 
@@ -287,15 +250,11 @@ button {
 .primary-btn,
 .secondary-btn {
     padding: 14px 22px;
-
     border-radius: 14px;
-
     display: inline-flex;
     align-items: center;
     gap: 10px;
-
     font-weight: 600;
-
     transition: 0.3s ease;
 }
 
@@ -313,9 +272,7 @@ button {
 
 .secondary-btn {
     color: white;
-
     background: rgba(255, 255, 255, 0.08);
-
     border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
@@ -326,24 +283,15 @@ button {
 
 .dynasty-statement {
     position: absolute;
-
     right: 8%;
     top: 18%;
-
     font-size: clamp(30px, 5vw, 75px);
-
     font-weight: 800;
-
     line-height: 0.95;
-
     max-width: 430px;
-
     text-align: right;
-
     color: rgba(255, 255, 255, 0.08);
-
     z-index: 1;
-
     pointer-events: none;
 }
 
@@ -354,20 +302,18 @@ button {
 
 .character {
     position: absolute;
-
     right: 10%;
     bottom: 10%;
-
     width: 190px;
     height: 260px;
-
     z-index: 6;
-
     animation: floating 4s ease-in-out infinite;
 }
 
 @keyframes floating {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translateY(0);
     }
 
@@ -378,18 +324,12 @@ button {
 
 .ear {
     position: absolute;
-
     width: 75px;
     height: 75px;
-
     border-radius: 50%;
-
     background: #e98bbd;
-
     border: 10px solid #353744;
-
     top: 5px;
-
     z-index: 0;
 }
 
@@ -403,34 +343,23 @@ button {
 
 .head {
     position: absolute;
-
     left: 20px;
     top: 25px;
-
     width: 150px;
     height: 145px;
-
     border-radius: 48%;
-
     background: #3b3d49;
-
     z-index: 2;
-
     box-shadow: inset -12px -10px rgba(0, 0, 0, 0.12);
 }
 
 .eye {
     position: absolute;
-
     top: 48px;
-
     width: 35px;
     height: 42px;
-
     border-radius: 50%;
-
     background: white;
-
     overflow: hidden;
 }
 
@@ -444,120 +373,83 @@ button {
 
 .pupil {
     position: absolute;
-
     left: 50%;
     top: 50%;
-
     width: 15px;
     height: 18px;
-
     border-radius: 50%;
-
     background: #111;
-
     transform: translate(-50%, -50%);
-
     transition: transform 0.08s linear;
 }
 
 .nose {
     position: absolute;
-
     left: 50%;
     bottom: 30px;
-
     transform: translateX(-50%);
-
     width: 15px;
     height: 11px;
-
     border-radius: 50%;
-
     background: #f29abf;
 }
 
 .mouth {
     position: absolute;
-
     left: 50%;
     bottom: 17px;
-
     width: 25px;
     height: 10px;
-
     border-bottom: 3px solid #171820;
-
     border-radius: 50%;
-
     transform: translateX(-50%);
 }
 
 .body {
     position: absolute;
-
     left: 42px;
     top: 145px;
-
     width: 105px;
     height: 100px;
-
     border-radius: 45%;
-
     background: #343640;
-
     z-index: 1;
 }
 
 .belly {
     position: absolute;
-
     width: 65px;
     height: 70px;
-
     left: 20px;
     top: 15px;
-
     border-radius: 50%;
-
     background: #e7d7c5;
 }
 
 .tail {
     position: absolute;
-
     right: -5px;
     bottom: 25px;
-
     width: 70px;
     height: 50px;
-
     border: 8px solid #343640;
-
     border-left: none;
-
     border-radius: 0 50% 50% 0;
-
     transform: rotate(-15deg);
 }
 
 .floating-shape {
     position: absolute;
-
     border-radius: 50%;
-
     filter: blur(1px);
-
     opacity: 0.5;
-
     animation: drift 8s ease-in-out infinite;
 }
 
 .shape-one {
     width: 90px;
     height: 90px;
-
     background: #ff4ecd;
-
     right: 35%;
     top: 15%;
 }
@@ -565,9 +457,7 @@ button {
 .shape-two {
     width: 60px;
     height: 60px;
-
     background: #00d4ff;
-
     left: 30%;
     bottom: 10%;
 }
@@ -575,15 +465,15 @@ button {
 .shape-three {
     width: 45px;
     height: 45px;
-
     background: #ffe66d;
-
     right: 25%;
     bottom: 30%;
 }
 
 @keyframes drift {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translate(0, 0);
     }
 
@@ -603,17 +493,13 @@ button {
 
 .page-heading h1 {
     font-size: clamp(40px, 6vw, 75px);
-
     line-height: 1;
-
     margin-bottom: 15px;
 }
 
 .page-heading p {
     color: #aeb3c6;
-
     max-width: 600px;
-
     line-height: 1.7;
 }
 
@@ -624,15 +510,11 @@ button {
 
 .setting-card {
     max-width: 850px;
-
     padding: 28px;
-
     margin-bottom: 20px;
-
     border-radius: 22px;
 
     background: rgba(255, 255, 255, 0.06);
-
     border: 1px solid rgba(255, 255, 255, 0.09);
 
     backdrop-filter: blur(20px);
@@ -646,13 +528,11 @@ button {
 
 .setting-info h3 {
     font-size: 20px;
-
     margin-bottom: 7px;
 }
 
 .setting-info p {
     color: #969caf;
-
     font-size: 14px;
 }
 
@@ -665,20 +545,15 @@ button {
 
 .option-btn {
     padding: 11px 15px;
-
     border-radius: 12px;
-
     color: #b7bbcb;
-
     background: rgba(255, 255, 255, 0.07);
-
     transition: 0.3s ease;
 }
 
 .option-btn:hover,
 .option-btn.selected {
     color: white;
-
     background: #6759dc;
 }
 
@@ -689,67 +564,171 @@ button {
 
 .poetry-list {
     max-width: 900px;
-
     display: flex;
-
     flex-direction: column;
-
     gap: 12px;
 }
 
 .poem-title-btn {
     width: 100%;
-
     padding: 25px 28px;
 
     display: flex;
-
     align-items: center;
     justify-content: space-between;
 
     text-align: left;
-
     color: white;
 
     background: rgba(255, 255, 255, 0.06);
-
     border: 1px solid rgba(255, 255, 255, 0.08);
 
     border-radius: 18px;
-
     transition: 0.3s ease;
 }
 
 .poem-title-btn span:first-child {
     font-size: 19px;
-
     font-weight: 600;
 }
 
 .poem-number {
     color: #9d91ff;
-
     margin-right: 15px;
 }
 
 .poem-title-btn i {
     color: #9298b0;
-
     transition: 0.3s ease;
 }
 
 .poem-title-btn:hover {
     background: rgba(124, 108, 255, 0.18);
-
     border-color: rgba(157, 145, 255, 0.35);
-
     transform: translateX(8px);
 }
 
 .poem-title-btn:hover i {
     color: white;
-
     transform: translateX(5px);
+}
+
+
+/* ========================================
+   TRENDING
+======================================== */
+
+.trending-section {
+    max-width: 900px;
+    margin-bottom: 30px;
+
+    padding: 22px;
+
+    border-radius: 20px;
+
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    backdrop-filter: blur(18px);
+}
+
+.trending-section h3 {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.trending-list {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.trending-item {
+    flex: 1;
+    min-width: 180px;
+    padding: 15px;
+
+    text-align: left;
+
+    color: inherit;
+    background: rgba(124, 108, 255, 0.09);
+
+    border: 1px solid rgba(157, 145, 255, 0.15);
+    border-radius: 15px;
+
+    transition: 0.3s ease;
+}
+
+.trending-item:hover {
+    transform: translateY(-3px);
+    background: rgba(124, 108, 255, 0.18);
+}
+
+.trending-item strong {
+    display: block;
+    margin-bottom: 6px;
+}
+
+.trending-item small {
+    color: #9298b0;
+}
+
+
+/* ========================================
+   POEM SEARCH
+======================================== */
+
+.poem-search {
+    width: 100%;
+    max-width: 900px;
+
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    padding: 16px 20px;
+    margin-bottom: 25px;
+
+    border: 1px solid rgba(157, 145, 255, 0.25);
+    border-radius: 18px;
+
+    background: rgba(255, 255, 255, 0.06);
+
+    backdrop-filter: blur(18px);
+
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.12);
+
+    transition: 0.3s ease;
+}
+
+.poem-search:focus-within {
+    border-color: #9d91ff;
+
+    box-shadow:
+        0 0 25px rgba(157, 145, 255, 0.2);
+
+    transform: translateY(-2px);
+}
+
+.poem-search i {
+    color: #b19cff;
+    font-size: 18px;
+}
+
+.poem-search input {
+    width: 100%;
+    border: none;
+    outline: none;
+
+    background: transparent;
+    color: inherit;
+
+    font-family: inherit;
+    font-size: 14px;
+}
+
+.poem-search input::placeholder {
+    color: #9298b0;
 }
 
 
@@ -768,9 +747,7 @@ button {
 
 .back-btn {
     display: inline-flex;
-
     align-items: center;
-
     gap: 10px;
 
     padding: 12px 18px;
@@ -778,7 +755,6 @@ button {
     border-radius: 12px;
 
     color: #c2c6d6;
-
     background: rgba(255, 255, 255, 0.06);
 
     margin-bottom: 55px;
@@ -788,23 +764,18 @@ button {
 
 .back-btn:hover {
     color: white;
-
     transform: translateX(-4px);
 }
 
 .poem-container {
     max-width: 800px;
-
     margin: 0 auto;
-
     padding-bottom: 100px;
 }
 
 .poem-container h1 {
     font-size: clamp(40px, 7vw, 80px);
-
     line-height: 1.05;
-
     margin-bottom: 30px;
 }
 
@@ -827,9 +798,7 @@ button {
     white-space: pre-line;
 
     font-family: Georgia, serif;
-
     font-size: 19px;
-
     line-height: 2;
 
     color: #d9dbe5;
@@ -839,10 +808,239 @@ button {
     margin-top: 50px;
 
     font-family: Georgia, serif;
-
     font-style: italic;
 
     color: #9d91ff;
+}
+
+
+/* ========================================
+   POEM ACTION BUTTONS
+======================================== */
+
+.poem-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+
+    margin: 30px 0;
+
+    align-items: center;
+}
+
+.poem-action-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+
+    padding: 13px 20px;
+
+    border-radius: 30px;
+
+    border: 1px solid rgba(157, 145, 255, 0.25);
+
+    background: rgba(255, 255, 255, 0.06);
+
+    color: inherit;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    backdrop-filter: blur(15px);
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.poem-action-btn:hover {
+    transform: translateY(-4px);
+
+    background: rgba(124, 108, 255, 0.18);
+
+    border-color: #9d91ff;
+}
+
+.poem-action-btn i {
+    font-size: 17px;
+    color: #b19cff;
+}
+
+#likePoem.liked {
+    border-color: #ff4d8d;
+    background: rgba(255, 77, 141, 0.12);
+}
+
+#likePoem.liked i {
+    color: #ff4d8d;
+}
+
+
+/* ========================================
+   COMMENTS
+======================================== */
+
+.comment-section {
+    margin-top: 45px;
+    padding: 28px;
+
+    border-radius: 24px;
+
+    background: rgba(255, 255, 255, 0.045);
+
+    border: 1px solid rgba(157, 145, 255, 0.18);
+
+    backdrop-filter: blur(20px);
+
+    box-shadow:
+        0 15px 45px rgba(0, 0, 0, 0.12);
+}
+
+.comment-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-bottom: 25px;
+
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.comment-title::before {
+    content: "✦";
+
+    color: #b19cff;
+    font-size: 20px;
+}
+
+
+/* COMMENT LIST */
+
+.comment-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    margin-bottom: 28px;
+}
+
+.comment-item {
+    padding: 18px 20px;
+
+    border-radius: 16px;
+
+    background: rgba(124, 108, 255, 0.08);
+
+    border: 1px solid rgba(157, 145, 255, 0.13);
+
+    transition: 0.3s ease;
+}
+
+.comment-item:hover {
+    transform: translateX(4px);
+
+    border-color:
+        rgba(157, 145, 255, 0.35);
+}
+
+.comment-item strong {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #b19cff;
+    font-size: 14px;
+}
+
+.comment-item p {
+    color: #d9dbe5;
+
+    line-height: 1.7;
+    font-size: 14px;
+}
+
+
+/* COMMENT FORM */
+
+.comment-form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.comment-form input,
+.comment-form textarea {
+    width: 100%;
+
+    padding: 15px 17px;
+
+    border-radius: 14px;
+
+    border: 1px solid rgba(157, 145, 255, 0.2);
+
+    outline: none;
+
+    background: rgba(255, 255, 255, 0.055);
+
+    color: inherit;
+
+    font-family: inherit;
+    font-size: 14px;
+
+    transition: 0.3s ease;
+}
+
+.comment-form textarea {
+    min-height: 130px;
+    resize: vertical;
+}
+
+.comment-form input:focus,
+.comment-form textarea:focus {
+    border-color: #9d91ff;
+
+    box-shadow:
+        0 0 20px rgba(157, 145, 255, 0.13);
+}
+
+.comment-form input::placeholder,
+.comment-form textarea::placeholder {
+    color: #9298b0;
+}
+
+.comment-form button {
+    align-self: flex-start;
+
+    padding: 13px 22px;
+
+    border-radius: 14px;
+
+    background: linear-gradient(
+        135deg,
+        #7c6cff,
+        #ff4ecd
+    );
+
+    color: white;
+
+    font-family: inherit;
+    font-weight: 600;
+
+    box-shadow:
+        0 8px 25px rgba(124, 108, 255, 0.2);
+
+    transition: 0.3s ease;
+}
+
+.comment-form button:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 30px rgba(255, 78, 205, 0.25);
 }
 
 
@@ -893,7 +1091,6 @@ button {
 
 .share-card p {
     color: #9fa4b8;
-
     margin-bottom: 25px;
 }
 
@@ -907,7 +1104,8 @@ button {
 
     display: grid;
 
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns:
+        repeat(2, 1fr);
 
     gap: 15px;
 }
@@ -924,7 +1122,6 @@ button {
     border: 1px solid rgba(255, 255, 255, 0.08);
 
     display: flex;
-
     align-items: center;
 
     gap: 15px;
@@ -937,24 +1134,24 @@ button {
 .language-card:hover {
     transform: translateY(-4px);
 
-    background: rgba(124, 108, 255, 0.15);
+    background:
+        rgba(124, 108, 255, 0.15);
 }
 
-.language-card.selected-language {
+.language-card.selected {
     border-color: #7c6cff;
 
-    background: rgba(124, 108, 255, 0.16);
+    background:
+        rgba(124, 108, 255, 0.16);
 }
 
 .flag {
     font-size: 30px;
 }
 
-.language-card span:nth-child(2) {
+.language-card .language-name {
     display: flex;
-
     flex-direction: column;
-
     flex: 1;
 }
 
@@ -964,7 +1161,6 @@ button {
 
 .language-card small {
     color: #8f94a8;
-
     margin-top: 3px;
 }
 
@@ -973,75 +1169,8 @@ button {
     color: #9d91ff;
 }
 
-.selected-language .language-check {
+.language-card.selected .language-check {
     opacity: 1;
-}
-
-
-/* ========================================
-   LIGHT MODE
-======================================== */
-
-body.light {
-    background: #f3f4fa;
-
-    color: #171927;
-}
-
-body.light .sidebar {
-    background: rgba(255, 255, 255, 0.95);
-
-    border-right-color: rgba(0, 0, 0, 0.08);
-}
-
-body.light .brand p,
-body.light .nav-btn,
-body.light .sidebar-bottom {
-    color: #73788b;
-}
-
-body.light .nav-btn.active {
-    color: #22243a;
-}
-
-body.light .nav-btn:hover {
-    color: #22243a;
-
-    background: rgba(0, 0, 0, 0.05);
-}
-
-body.light .sidebar-bottom strong {
-    color: #22243a;
-}
-
-body.light .page:not(#home) {
-    background: #f3f4fa;
-}
-
-body.light .page-heading p,
-body.light .setting-info p {
-    color: #70758a;
-}
-
-body.light .setting-card,
-body.light .poem-title-btn,
-body.light .language-card,
-body.light .share-card,
-body.light .back-btn,
-body.light .option-btn {
-    color: #202236;
-
-    background: rgba(255, 255, 255, 0.8);
-
-    border-color: rgba(0, 0, 0, 0.08);
-}
-
-body.light .poem-text {
-    color: #44485b;
-}
-
-body.light .language-card small {
-    color: #777c90;
 }
 
 
@@ -1049,14 +1178,20 @@ body.light .language-card small {
    TEXTURES
 ======================================== */
 
+/* DOTS */
+
 body.texture-dots .page:not(#home) {
-    background-image: radial-gradient(
-        rgba(120, 120, 150, 0.2) 1px,
-        transparent 1px
-    );
+    background-image:
+        radial-gradient(
+            rgba(120, 120, 150, 0.2) 1px,
+            transparent 1px
+        );
 
     background-size: 20px 20px;
 }
+
+
+/* GRID */
 
 body.texture-grid .page:not(#home) {
     background-image:
@@ -1073,20 +1208,243 @@ body.texture-grid .page:not(#home) {
     background-size: 35px 35px;
 }
 
+
+/* PLAIN */
+
 body.texture-plain .page:not(#home) {
     background-image: none;
 }
 
 
+/* DIAGONAL */
+
+body.texture-diagonal .page:not(#home) {
+    background-image:
+        repeating-linear-gradient(
+            135deg,
+            rgba(157, 145, 255, 0.07) 0,
+            rgba(157, 145, 255, 0.07) 1px,
+            transparent 1px,
+            transparent 14px
+        );
+}
+
+
+/* CROSSHATCH */
+
+body.texture-crosshatch .page:not(#home) {
+    background-image:
+        linear-gradient(
+            45deg,
+            rgba(157, 145, 255, 0.055) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            -45deg,
+            rgba(157, 145, 255, 0.055) 1px,
+            transparent 1px
+        );
+
+    background-size: 24px 24px;
+}
+
+
+/* WAVES */
+
+body.texture-waves .page:not(#home) {
+    background-image:
+        radial-gradient(
+            ellipse at center,
+            transparent 0,
+            transparent 45%,
+            rgba(157, 145, 255, 0.07) 46%,
+            transparent 48%
+        );
+
+    background-size: 50px 30px;
+}
+
+
+/* BLUEPRINT */
+
+body.texture-blueprint .page:not(#home) {
+    background-image:
+        linear-gradient(
+            rgba(0, 212, 255, 0.07) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(0, 212, 255, 0.07) 1px,
+            transparent 1px
+        );
+
+    background-size: 25px 25px;
+}
+
+
+/* NOISE */
+
+body.texture-noise .page:not(#home) {
+    background-image:
+        radial-gradient(
+            rgba(255, 255, 255, 0.08) 0.7px,
+            transparent 0.7px
+        );
+
+    background-size: 5px 5px;
+}
+
+
+/* HEXAGONS */
+
+body.texture-hexagons .page:not(#home) {
+    background-image:
+        linear-gradient(
+            30deg,
+            rgba(157, 145, 255, 0.055) 12%,
+            transparent 12.5%,
+            transparent 87%,
+            rgba(157, 145, 255, 0.055) 87.5%,
+            rgba(157, 145, 255, 0.055)
+        ),
+        linear-gradient(
+            150deg,
+            rgba(157, 145, 255, 0.055) 12%,
+            transparent 12.5%,
+            transparent 87%,
+            rgba(157, 145, 255, 0.055) 87.5%,
+            rgba(157, 145, 255, 0.055)
+        );
+
+    background-size: 40px 70px;
+}
+
+
 /* ========================================
-   RESPONSIVE
+   LIGHT MODE
+======================================== */
+
+body.light {
+    background: #f3f4fa;
+    color: #171927;
+}
+
+body.light .sidebar {
+    background: rgba(255, 255, 255, 0.95);
+    border-right-color: rgba(0, 0, 0, 0.08);
+}
+
+body.light .brand p,
+body.light .nav-btn,
+body.light .sidebar-bottom {
+    color: #73788b;
+}
+
+body.light .nav-btn.active {
+    color: #22243a;
+}
+
+body.light .nav-btn:hover {
+    color: #22243a;
+    background: rgba(0, 0, 0, 0.05);
+}
+
+body.light .sidebar-bottom strong {
+    color: #22243a;
+}
+
+body.light .page:not(#home) {
+    background-color: #f3f4fa;
+}
+
+body.light .page-heading p,
+body.light .setting-info p {
+    color: #70758a;
+}
+
+body.light .setting-card,
+body.light .poem-title-btn,
+body.light .language-card,
+body.light .share-card,
+body.light .back-btn,
+body.light .option-btn,
+body.light .trending-section {
+    color: #202236;
+
+    background:
+        rgba(255, 255, 255, 0.8);
+
+    border-color:
+        rgba(0, 0, 0, 0.08);
+}
+
+body.light .poem-text {
+    color: #44485b;
+}
+
+body.light .language-card small {
+    color: #777c90;
+}
+
+body.light .poem-search,
+body.light .poem-action-btn,
+body.light .comment-section {
+    background:
+        rgba(255, 255, 255, 0.75);
+
+    border-color:
+        rgba(90, 80, 170, 0.18);
+}
+
+body.light .poem-search input,
+body.light .poem-action-btn {
+    color: #292b43;
+}
+
+body.light .poem-search input::placeholder,
+body.light .comment-form input::placeholder,
+body.light .comment-form textarea::placeholder {
+    color: #85899d;
+}
+
+body.light .comment-item {
+    background:
+        rgba(124, 108, 255, 0.07);
+
+    border-color:
+        rgba(90, 80, 170, 0.13);
+}
+
+body.light .comment-item p {
+    color: #50546b;
+}
+
+body.light .comment-form input,
+body.light .comment-form textarea {
+    background:
+        rgba(245, 246, 252, 0.9);
+
+    color: #292b43;
+
+    border-color:
+        rgba(90, 80, 170, 0.2);
+}
+
+body.light .poem-action-btn:hover {
+    background:
+        rgba(124, 108, 255, 0.12);
+}
+
+
+/* ========================================
+   MOBILE / RESPONSIVE
 ======================================== */
 
 @media (max-width: 850px) {
 
     .sidebar {
         width: 80px;
-
         padding: 25px 12px;
     }
 
@@ -1094,7 +1452,7 @@ body.texture-plain .page:not(#home) {
         justify-content: center;
     }
 
-    .brand > div:last-child,
+    .brand-text,
     .nav-btn span,
     .sidebar-bottom {
         display: none;
@@ -1115,7 +1473,6 @@ body.texture-plain .page:not(#home) {
 
     .character {
         opacity: 0.35;
-
         right: 5%;
     }
 
@@ -1124,6 +1481,7 @@ body.texture-plain .page:not(#home) {
         right: 6%;
     }
 }
+
 
 @media (max-width: 600px) {
 
@@ -1145,7 +1503,6 @@ body.texture-plain .page:not(#home) {
 
     .character {
         transform: scale(0.75);
-
         right: -10px;
         bottom: 5%;
     }
@@ -1156,20 +1513,36 @@ body.texture-plain .page:not(#home) {
 
     .setting-card {
         flex-direction: column;
-
         align-items: flex-start;
     }
 
     .poem-text {
         font-size: 17px;
     }
+
+    .poem-search {
+        padding: 14px 16px;
+    }
+
+    .poem-action-btn {
+        padding: 11px 16px;
+        font-size: 13px;
+    }
+
+    .comment-section {
+        padding: 20px;
+        border-radius: 20px;
+    }
+
+    .comment-title {
+        font-size: 19px;
+    }
+
+    .comment-form button {
+        width: 100%;
+    }
+
+    .share-card {
+        padding: 30px 20px;
+    }
 }
-/* PER-POEM COMMENT SECTION */
-.comment-section { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #eee; }
-.comment-title { font-size: 1.2rem; margin-bottom: 1rem; }
-.comment-list { display: flex; flex-direction: column; gap: 1rem; margin-bottom: 1.5rem; }
-.comment-item { background: #f9f9f9; padding: 1rem; border-radius: 10px; }
-.comment-item strong { display: block; font-size: 0.9rem; margin-bottom: 0.3rem; }
-.comment-form { display: flex; flex-direction: column; gap: 0.7rem; }
-.comment-form input,.comment-form textarea { width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 8px; font-family: inherit; }
-.comment-form button { align-self: flex-start; padding: 0.7rem 1.5rem; border: none; border-radius: 8px; cursor: pointer; background: black; color: white; }
