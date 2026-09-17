@@ -1,13 +1,427 @@
 /* ========================================
-   DYNASTY - FINAL COMPLETE FILE
-   SUPABASE GLOBAL - 100% YOUR POEMS PRESERVED
+   DYNASTY - FINAL COMPLETE SCRIPT
+   ALL ORIGINAL POEMS PRESERVED
+   SUPABASE GLOBAL VIEWS + COMMENTS
 ======================================== */
+
+
+/* ========================================
+   1. TRANSLATIONS
+======================================== */
+
 const translations = {
-    en: { tagline: "A world that follows you.", home: "Home", settings: "Settings", library: "Library", share: "Share", language: "Language", welcome: "WELCOME TO", homeTagline: "A world that follows you.", homeDescription: "Welcome to a colourful world built around imagination, interaction and words. Move, explore and discover.", enterLibrary: "Enter Library", customize: "Customize", allInOne: "ALL IN ONE DYNASTY", settingsLabel: "PERSONALIZE", settingsTitle: "Settings", settingsDescription: "Make Dynasty feel like your own world.", themeTitle: "Theme", themeDescription: "Choose how Dynasty looks.", dark: "Dark", light: "Light", backgroundTitle: "Background", backgroundDescription: "Choose a background style.", dots: "Dots", grid: "Grid", plain: "Plain", libraryLabel: "THE ARCHIVE", libraryTitle: "Library", libraryDescription: "Every piece is a world of its own.", backLibrary: "Back to Library", poemLabel: "DYNASTY LIBRARY", shareLabel: "SPREAD THE WORLD", shareTitle: "Share Dynasty", shareDescription: "Let someone else discover your world.", shareCardTitle: "Share this experience", shareCardDescription: "Copy the link and send Dynasty to someone.", copyLink: "Copy Link", languageLabel: "YOUR LANGUAGE", languageTitle: "Choose a Language", languageDescription: "Change the language of the entire Dynasty experience." },
-    fr: { tagline: "Un monde qui vous suit.", home: "Accueil", settings: "Paramètres", library: "Bibliothèque", share: "Partager", language: "Langue", welcome: "BIENVENUE À", homeTagline: "Un monde qui vous suit.", homeDescription: "Bienvenue dans un monde coloré construit autour de l'imagination, de l'interaction et des mots. Bougez, explorez et découvrez.", enterLibrary: "Entrer dans la bibliothèque", customize: "Personnaliser", allInOne: "TOUT DANS UNE DYNASTIE", settingsLabel: "PERSONALISER", settingsTitle: "Paramètres", settingsDescription: "Faites de Dynasty votre propre monde.", themeTitle: "Thème", themeDescription: "Choisissez l'apparence de Dynasty.", dark: "Sombre", light: "Clair", backgroundTitle: "Arrière-plan", backgroundDescription: "Choisissez un style d'arrière-plan.", dots: "Points", grid: "Grille", plain: "Simple", libraryLabel: "LES ARCHIVES", libraryTitle: "Bibliothèque", libraryDescription: "Chaque poème est un monde à lui seul.", backLibrary: "Retour à la bibliothèque", poemLabel: "BIBLIOTHÈQUE DYNASTY", shareLabel: "PARTAGER LE MONDE", shareTitle: "Partager Dynasty", shareDescription: "Laissez quelqu'un d'autre découvrir votre monde.", shareCardTitle: "Partager cette expérience", shareCardDescription: "Copiez le lien et envoyez Dynasty à quelqu'un.", copyLink: "Copier le lien", languageLabel: "VOTRE LANGUE", languageTitle: "Choisissez une langue", languageDescription: "Changez la langue de toute l'expérience Dynasty." },
-    es: { tagline: "Un mundo que te sigue.", home: "Inicio", settings: "Configuración", library: "Biblioteca", share: "Compartir", language: "Idioma", welcome: "BIENVENIDO A", homeTagline: "Un mundo que te sigue.", homeDescription: "Bienvenido a un mundo colorido construido alrededor de la imaginación, la interacción y las palabras. Muévete, explora y descubre.", enterLibrary: "Entrar a la biblioteca", customize: "Personalizar", allInOne: "TODO EN UNA DINASTÍA", settingsLabel: "PERSONALIZAR", settingsTitle: "Configuración", settingsDescription: "Haz que Dynasty se sienta como tu propio mundo.", themeTitle: "Tema", themeDescription: "Elige cómo se ve Dynasty.", dark: "Oscuro", light: "Claro", backgroundTitle: "Fondo", backgroundDescription: "Elige un estilo de fondo.", dots: "Puntos", grid: "Cuadrícula", plain: "Simple", libraryLabel: "EL ARCHIVO", libraryTitle: "Biblioteca", libraryDescription: "Cada pieza es un mundo en sí misma.", backLibrary: "Volver a la biblioteca", poemLabel: "BIBLIOTECA DYNASTY", shareLabel: "COMPARTE EL MUNDO", shareTitle: "Compartir Dynasty", shareDescription: "Deja que alguien más descubra tu mundo.", shareCardTitle: "Comparte esta experiencia", shareCardDescription: "Copia el enlace y envía Dynasty a alguien.", copyLink: "Copiar enlace", languageLabel: "TU IDIOMA", languageTitle: "Elige un idioma", languageDescription: "Cambia el idioma de toda la experiencia Dynasty." },
-    nl: { tagline: "Een wereld die je volgt.", home: "Home", settings: "Instellingen", library: "Bibliotheek", share: "Delen", language: "Taal", welcome: "WELKOM BIJ", homeTagline: "Een wereld die je volgt.", homeDescription: "Welkom in een kleurrijke wereld vol verbeelding, interactie en woorden. Beweeg, ontdek en verken.", enterLibrary: "Bibliotheek openen", customize: "Aanpassen", allInOne: "ALLES IN ÉÉN DYNASTIE", settingsLabel: "PERSONALISEREN", settingsTitle: "Instellingen", settingsDescription: "Maak van Dynasty jouw eigen wereld.", themeTitle: "Thema", themeDescription: "Kies hoe Dynasty eruitziet.", dark: "Donker", light: "Licht", backgroundTitle: "Achtergrond", backgroundDescription: "Kies een achtergrondstijl.", dots: "Punten", grid: "Raster", plain: "Eenvoudig", libraryLabel: "HET ARCHIEF", libraryTitle: "Poëziebibliotheek", libraryDescription: "Elk stuk is een wereld op zich.", backLibrary: "Terug naar bibliotheek", poemLabel: "DYNASTY BIBLIOTHEEK", shareLabel: "DEEL DE WERELD", shareTitle: "Dynasty delen", shareDescription: "Laat iemand anders jouw wereld ontdekken.", shareCardTitle: "Deel deze ervaring", shareCardDescription: "Kopieer de link en stuur Dynasty naar iemand.", copyLink: "Link kopiëren", languageLabel: "JOUW TAAL", languageTitle: "Kies een taal", languageDescription: "Verander de taal van de volledige Dynasty-ervaring." }
+
+    en: {
+        tagline: "A world that follows you.",
+        home: "Home",
+        settings: "Settings",
+        library: "Library",
+        share: "Share",
+        language: "Language",
+
+        welcome: "WELCOME TO",
+        homeTagline: "A world that follows you.",
+        homeDescription:
+            "Welcome to a colourful world built around imagination, interaction and words. Move, explore and discover.",
+        enterLibrary: "Enter Library",
+        customize: "Customize",
+        allInOne: "ALL IN ONE DYNASTY",
+
+        settingsLabel: "PERSONALIZE",
+        settingsTitle: "Settings",
+        settingsDescription:
+            "Make Dynasty feel like your own world.",
+        themeTitle: "Theme",
+        themeDescription:
+            "Choose how Dynasty looks.",
+        dark: "Dark",
+        light: "Light",
+        backgroundTitle: "Background",
+        backgroundDescription:
+            "Choose a background style.",
+        dots: "Dots",
+        grid: "Grid",
+        plain: "Plain",
+
+        libraryLabel: "THE ARCHIVE",
+        libraryTitle: "Library",
+        libraryDescription:
+            "Every piece is a world of its own.",
+        backLibrary: "Back to Library",
+        poemLabel: "DYNASTY LIBRARY",
+
+        shareLabel: "SPREAD THE WORLD",
+        shareTitle: "Share Dynasty",
+        shareDescription:
+            "Let someone else discover your world.",
+        shareCardTitle: "Share this experience",
+        shareCardDescription:
+            "Copy the link and send Dynasty to someone.",
+        copyLink: "Copy Link",
+
+        languageLabel: "YOUR LANGUAGE",
+        languageTitle: "Choose a Language",
+        languageDescription:
+            "Change the language of the entire Dynasty experience.",
+
+        commentsTitle: "Comments",
+        commentName: "Your name",
+        commentPlaceholder: "Write a comment...",
+        commentButton: "Post Comment",
+        liked: "Liked",
+        like: "Like",
+
+        views: "views",
+        comments: "comments",
+
+        noComments:
+            "No comments yet. Be the first.",
+        loadingComments:
+            "Loading comments...",
+        commentError:
+            "Failed to load comments",
+        fillComments:
+            "Please fill both fields",
+        copied: "Copied!",
+        poemLinkCopied:
+            "Poem link copied!"
+    },
+
+
+    fr: {
+        tagline: "Un monde qui vous suit.",
+        home: "Accueil",
+        settings: "Paramètres",
+        library: "Bibliothèque",
+        share: "Partager",
+        language: "Langue",
+
+        welcome: "BIENVENUE À",
+        homeTagline: "Un monde qui vous suit.",
+        homeDescription:
+            "Bienvenue dans un monde coloré construit autour de l'imagination, de l'interaction et des mots. Bougez, explorez et découvrez.",
+        enterLibrary:
+            "Entrer dans la bibliothèque",
+        customize: "Personnaliser",
+        allInOne:
+            "TOUT DANS UNE DYNASTIE",
+
+        settingsLabel: "PERSONNALISER",
+        settingsTitle: "Paramètres",
+        settingsDescription:
+            "Faites de Dynasty votre propre monde.",
+        themeTitle: "Thème",
+        themeDescription:
+            "Choisissez l'apparence de Dynasty.",
+        dark: "Sombre",
+        light: "Clair",
+        backgroundTitle: "Arrière-plan",
+        backgroundDescription:
+            "Choisissez un style d'arrière-plan.",
+        dots: "Points",
+        grid: "Grille",
+        plain: "Simple",
+
+        libraryLabel: "LES ARCHIVES",
+        libraryTitle: "Bibliothèque",
+        libraryDescription:
+            "Chaque poème est un monde à lui seul.",
+        backLibrary:
+            "Retour à la bibliothèque",
+        poemLabel:
+            "BIBLIOTHÈQUE DYNASTY",
+
+        shareLabel:
+            "PARTAGER LE MONDE",
+        shareTitle:
+            "Partager Dynasty",
+        shareDescription:
+            "Laissez quelqu'un d'autre découvrir votre monde.",
+        shareCardTitle:
+            "Partager cette expérience",
+        shareCardDescription:
+            "Copiez le lien et envoyez Dynasty à quelqu'un.",
+        copyLink:
+            "Copier le lien",
+
+        languageLabel:
+            "VOTRE LANGUE",
+        languageTitle:
+            "Choisissez une langue",
+        languageDescription:
+            "Changez la langue de toute l'expérience Dynasty.",
+
+        commentsTitle:
+            "Commentaires",
+        commentName:
+            "Votre nom",
+        commentPlaceholder:
+            "Écrivez un commentaire...",
+        commentButton:
+            "Publier le commentaire",
+        liked:
+            "Aimé",
+        like:
+            "J'aime",
+
+        views:
+            "vues",
+        comments:
+            "commentaires",
+
+        noComments:
+            "Aucun commentaire pour le moment. Soyez le premier.",
+        loadingComments:
+            "Chargement des commentaires...",
+        commentError:
+            "Échec du chargement des commentaires",
+        fillComments:
+            "Veuillez remplir les deux champs",
+        copied:
+            "Copié !",
+        poemLinkCopied:
+            "Lien du poème copié !"
+    },
+
+
+    es: {
+        tagline:
+            "Un mundo que te sigue.",
+        home:
+            "Inicio",
+        settings:
+            "Configuración",
+        library:
+            "Biblioteca",
+        share:
+            "Compartir",
+        language:
+            "Idioma",
+
+        welcome:
+            "BIENVENIDO A",
+        homeTagline:
+            "Un mundo que te sigue.",
+        homeDescription:
+            "Bienvenido a un mundo colorido construido alrededor de la imaginación, la interacción y las palabras. Muévete, explora y descubre.",
+        enterLibrary:
+            "Entrar a la biblioteca",
+        customize:
+            "Personalizar",
+        allInOne:
+            "TODO EN UNA DINASTÍA",
+
+        settingsLabel:
+            "PERSONALIZAR",
+        settingsTitle:
+            "Configuración",
+        settingsDescription:
+            "Haz que Dynasty se sienta como tu propio mundo.",
+        themeTitle:
+            "Tema",
+        themeDescription:
+            "Elige cómo se ve Dynasty.",
+        dark:
+            "Oscuro",
+        light:
+            "Claro",
+        backgroundTitle:
+            "Fondo",
+        backgroundDescription:
+            "Elige un estilo de fondo.",
+        dots:
+            "Puntos",
+        grid:
+            "Cuadrícula",
+        plain:
+            "Simple",
+
+        libraryLabel:
+            "EL ARCHIVO",
+        libraryTitle:
+            "Biblioteca",
+        libraryDescription:
+            "Cada pieza es un mundo en sí misma.",
+        backLibrary:
+            "Volver a la biblioteca",
+        poemLabel:
+            "BIBLIOTECA DYNASTY",
+
+        shareLabel:
+            "COMPARTE EL MUNDO",
+        shareTitle:
+            "Compartir Dynasty",
+        shareDescription:
+            "Deja que alguien más descubra tu mundo.",
+        shareCardTitle:
+            "Comparte esta experiencia",
+        shareCardDescription:
+            "Copia el enlace y envía Dynasty a alguien.",
+        copyLink:
+            "Copiar enlace",
+
+        languageLabel:
+            "TU IDIOMA",
+        languageTitle:
+            "Elige un idioma",
+        languageDescription:
+            "Cambia el idioma de toda la experiencia Dynasty.",
+
+        commentsTitle:
+            "Comentarios",
+        commentName:
+            "Tu nombre",
+        commentPlaceholder:
+            "Escribe un comentario...",
+        commentButton:
+            "Publicar comentario",
+        liked:
+            "Te gusta",
+        like:
+            "Me gusta",
+
+        views:
+            "vistas",
+        comments:
+            "comentarios",
+
+        noComments:
+            "Aún no hay comentarios. Sé el primero.",
+        loadingComments:
+            "Cargando comentarios...",
+        commentError:
+            "No se pudieron cargar los comentarios",
+        fillComments:
+            "Por favor, completa ambos campos",
+        copied:
+            "¡Copiado!",
+        poemLinkCopied:
+            "¡Enlace del poema copiado!"
+    },
+
+
+    nl: {
+        tagline:
+            "Een wereld die je volgt.",
+        home:
+            "Home",
+        settings:
+            "Instellingen",
+        library:
+            "Bibliotheek",
+        share:
+            "Delen",
+        language:
+            "Taal",
+
+        welcome:
+            "WELKOM BIJ",
+        homeTagline:
+            "Een wereld die je volgt.",
+        homeDescription:
+            "Welkom in een kleurrijke wereld vol verbeelding, interactie en woorden. Beweeg, ontdek en verken.",
+        enterLibrary:
+            "Bibliotheek openen",
+        customize:
+            "Aanpassen",
+        allInOne:
+            "ALLES IN ÉÉN DYNASTIE",
+
+        settingsLabel:
+            "PERSONALISEREN",
+        settingsTitle:
+            "Instellingen",
+        settingsDescription:
+            "Maak van Dynasty jouw eigen wereld.",
+        themeTitle:
+            "Thema",
+        themeDescription:
+            "Kies hoe Dynasty eruitziet.",
+        dark:
+            "Donker",
+        light:
+            "Licht",
+        backgroundTitle:
+            "Achtergrond",
+        backgroundDescription:
+            "Kies een achtergrondstijl.",
+        dots:
+            "Punten",
+        grid:
+            "Raster",
+        plain:
+            "Eenvoudig",
+
+        libraryLabel:
+            "HET ARCHIEF",
+        libraryTitle:
+            "Poëziebibliotheek",
+        libraryDescription:
+            "Elk stuk is een wereld op zich.",
+        backLibrary:
+            "Terug naar bibliotheek",
+        poemLabel:
+            "DYNASTY BIBLIOTHEEK",
+
+        shareLabel:
+            "DEEL DE WERELD",
+        shareTitle:
+            "Dynasty delen",
+        shareDescription:
+            "Laat iemand anders jouw wereld ontdekken.",
+        shareCardTitle:
+            "Deel deze ervaring",
+        shareCardDescription:
+            "Kopieer de link en stuur Dynasty naar iemand.",
+        copyLink:
+            "Link kopiëren",
+
+        languageLabel:
+            "JOUW TAAL",
+        languageTitle:
+            "Kies een taal",
+        languageDescription:
+            "Verander de taal van de volledige Dynasty-ervaring.",
+
+        commentsTitle:
+            "Reacties",
+        commentName:
+            "Je naam",
+        commentPlaceholder:
+            "Schrijf een reactie...",
+        commentButton:
+            "Reactie plaatsen",
+        liked:
+            "Vind ik leuk",
+        like:
+            "Vind ik leuk",
+
+        views:
+            "weergaven",
+        comments:
+            "reacties",
+
+        noComments:
+            "Nog geen reacties. Wees de eerste.",
+        loadingComments:
+            "Reacties laden...",
+        commentError:
+            "Reacties konden niet worden geladen",
+        fillComments:
+            "Vul beide velden in",
+        copied:
+            "Gekopieerd!",
+        poemLinkCopied:
+            "Poëzielink gekopieerd!"
+    }
+
 };
+
+
+/* ========================================
+   2. YOUR POEMS
+   ORIGINAL TEXTS PRESERVED
+======================================== */
 
 const poems = [
 
@@ -30,6 +444,7 @@ then they begin to search for words.
 
 This is the weakness I have felt the most over my years.`
     },
+
 
     {
         title: "Blue on Blue",
@@ -74,6 +489,7 @@ Some dreams are just coffins disguised as the moon.
 .`
     },
 
+
     {
         title: "Angels on Earth",
 
@@ -105,6 +521,7 @@ Happy international women's day
 🫴🥺
 .`
     },
+
 
     {
         title: "The World Beyond",
@@ -162,7 +579,9 @@ The world beyond… it made me see,
 the poet buried deep inside of me.
 .`
     },
-        {
+
+
+    {
         title: "Vinland Saga",
 
         text: `VINLAND SAGA
@@ -198,6 +617,7 @@ A true warrior doesn't need a sword
 Trof once told me so, but only true warriors could understand those words.
 .`
     },
+
 
     {
         title: "Survival for the Stories We Carry",
@@ -261,8 +681,9 @@ But they choose heads for every seating.
 A journey of eyes witnessing a story of hearts,
 From the desert cattle to the oil land,
 As once again my foot on Port Harcourt sand.
-       .`
+.`
     },
+
 
     {
         title: "Still Yours",
@@ -302,6 +723,7 @@ I'm stuck in your world, free me from thy curse
 Oh! Even in freedom my soul is still yours
 .`
     },
+
 
     {
         title: "Dear Ex",
@@ -359,6 +781,7 @@ You stole my heart and turned my head insane.
 .`
     },
 
+
     {
         title: "Cost of Loving You",
 
@@ -374,6 +797,7 @@ But love should never require
 one person to become empty
 so another can feel full.`
     },
+
 
     {
         title: "Mon Ami, It's Better With You",
@@ -392,6 +816,7 @@ even the longest road
 feel a little less alone.`
     },
 
+
     {
         title: "Many Are Mad",
 
@@ -407,6 +832,7 @@ just to silence the pain,
 while others call chaos
 a beautiful name.`
     },
+
 
     {
         title: "Life Isn't a Bed of Roses",
@@ -427,198 +853,1656 @@ is the victory.`
     }
 
 ];
-const pages = document.querySelectorAll(".page");
-const navButtons = document.querySelectorAll(".nav-btn");
-const pageButtons = document.querySelectorAll("[data-page]");
+
+
+/* ========================================
+   3. PAGE NAVIGATION
+======================================== */
+
+const pages =
+    document.querySelectorAll(".page");
+
+const navButtons =
+    document.querySelectorAll(".nav-btn");
+
+const pageButtons =
+    document.querySelectorAll("[data-page]");
+
+
 function showPage(pageName) {
-    pages.forEach(page => { page.classList.remove("active-page"); });
-    const selectedPage = document.getElementById(pageName);
-    if (!selectedPage) return;
-    selectedPage.classList.add("active-page");
+
+    pages.forEach(page => {
+        page.classList.remove("active");
+    });
+
+    const selectedPage =
+        document.getElementById(pageName);
+
+    if (!selectedPage) {
+        console.warn(
+            `Dynasty: page "${pageName}" was not found.`
+        );
+        return;
+    }
+
+    selectedPage.classList.add("active");
+
+    navButtons.forEach(button => {
+
+        button.classList.remove("active");
+
+        if (
+            button.dataset.page ===
+            pageName
+        ) {
+            button.classList.add("active");
+        }
+
+    });
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
+
+
+pageButtons.forEach(button => {
+
+    button.addEventListener(
+        "click",
+        () => {
+
+            const page =
+                button.dataset.page;
+
+            if (page) {
+                showPage(page);
+            }
+
+        }
+    );
+
+});
+
+
+/* ========================================
+   4. POETRY LIBRARY
+======================================== */
+
+const poetryList =
+    document.getElementById("poemList");
+
+
+function createPoetryLibrary() {
+
+    if (!poetryList) {
+        console.warn(
+            "Dynasty: #poemList was not found."
+        );
+        return;
+    }
+
+    poetryList.innerHTML = "";
+
+    poems.forEach((poem, index) => {
+
+        const button =
+            document.createElement("button");
+
+        button.type = "button";
+
+        button.className =
+            "poem-title-btn";
+
+        const number =
+            document.createElement("span");
+
+        number.className =
+            "poem-number";
+
+        number.textContent =
+            String(index + 1)
+                .padStart(2, "0");
+
+
+        const title =
+            document.createElement("span");
+
+        title.textContent =
+            poem.title;
+
+
+        const left =
+            document.createElement("span");
+
+        left.appendChild(number);
+        left.appendChild(title);
+
+
+        const arrow =
+            document.createElement("i");
+
+        arrow.className =
+            "fa-solid fa-arrow-right";
+
+
+        button.appendChild(left);
+        button.appendChild(arrow);
+
+
+        button.addEventListener(
+            "click",
+            () => {
+                openPoem(index);
+            }
+        );
+
+
+        poetryList.appendChild(button);
+
+    });
+
+}
+
+
+createPoetryLibrary();
+
+
+/* ========================================
+   5. SUPABASE
+======================================== */
+
+const SUPABASE_URL =
+    "https://kgpqfvzqrsufioumnlmq.supabase.co";
+
+const SUPABASE_KEY =
+    "sb_publishable_hDjmXgHr006EA08mk-mjaA_H80kVaAI";
+
+
+const supabaseHeaders = {
+
+    "apikey":
+        SUPABASE_KEY,
+
+    "Authorization":
+        `Bearer ${SUPABASE_KEY}`,
+
+    "Content-Type":
+        "application/json"
+
+};
+
+
+/* ========================================
+   6. POEM READER
+======================================== */
+
+const poemTitle =
+    document.getElementById("poemTitle");
+
+const poemText =
+    document.getElementById("poemText");
+
+const backToLibrary =
+    document.getElementById("backToLibrary");
+
+
+window.currentPoemTitle = null;
+
+
+async function openPoem(index) {
+
+    const poem =
+        poems[index];
+
+    if (!poem) return;
+
+
+    if (poemTitle) {
+        poemTitle.textContent =
+            poem.title;
+    }
+
+
+    if (poemText) {
+        poemText.textContent =
+            poem.text;
+    }
+
+
+    window.currentPoemTitle =
+        poem.title;
+
+
+    showPage("poemReader");
+
+
     navButtons.forEach(button => {
         button.classList.remove("active");
-        if (button.dataset.page === pageName) { button.classList.add("active"); }
     });
-    window.scrollTo({ top: 0, behavior: "smooth" });
-}
-navButtons.forEach(button => { button.addEventListener("click", () => { const page = button.dataset.page; if (page) showPage(page); }); });
-pageButtons.forEach(button => { button.addEventListener("click", () => { const page = button.dataset.page; if (page) showPage(page); }); });
-const poetryList = document.getElementById("poetryList");
-function createPoetryLibrary() {
-    if (!poetryList) return;
-    poetryList.innerHTML = "";
-    poems.forEach((poem, index) => {
-        const button = document.createElement("button");
-        button.className = "poem-title-btn";
-        button.innerHTML = `<span><span class="poem-number">${String(index + 1).padStart(2, "0")}</span> ${poem.title}</span><i class="fa-solid fa-arrow-right"></i>`;
-        button.addEventListener("click", () => { openPoem(index); });
-        poetryList.appendChild(button);
-    });
-}
-createPoetryLibrary();
-const SUPABASE_URL = "https://kgpqfvzqrsufioumnlmq.supabase.co";
-const SUPABASE_KEY = "sb_publishable_hDjmXgHr006EA08mk-mjaA_H80kVaAI";
-const supabaseHeaders = { "apikey": SUPABASE_KEY, "Authorization": `Bearer ${SUPABASE_KEY}`, "Content-Type": "application/json" };
-const poemTitle = document.getElementById("poemTitle");
-const poemText = document.getElementById("poemText");
-const backToLibrary = document.getElementById("backToLibrary");
-window.currentPoemTitle = null;
-async function openPoem(index) {
-    const poem = poems[index];
-    if (!poem) return;
-    poemTitle.textContent = poem.title;
-    poemText.textContent = poem.text;
-    window.currentPoemTitle = poem.title;
-    showPage("poemReader");
-    navButtons.forEach(button => { button.classList.remove("active"); });
-    await addView(poem.title);
+
+
+    updateLikeButtonText();
+
+
+    await addView(
+        poem.title
+    );
+
+
     await renderComments();
+
     await renderTrending();
+
 }
+
+
 if (backToLibrary) {
-    backToLibrary.addEventListener("click", () => { showPage("library"); });
+
+    backToLibrary.addEventListener(
+        "click",
+        () => {
+
+            showPage("library");
+
+        }
+    );
+
 }
+
+
+/* ========================================
+   7. SUPABASE VIEWS
+======================================== */
+
 async function addView(title) {
+
     try {
-        let res = await fetch(`${SUPABASE_URL}/rest/v1/poem_views?title=eq.${encodeURIComponent(title)}`, { headers: supabaseHeaders });
-        let data = await res.json();
+
+        const queryURL =
+            `${SUPABASE_URL}/rest/v1/poem_views?title=eq.${encodeURIComponent(title)}`;
+
+
+        const res =
+            await fetch(
+                queryURL,
+                {
+                    headers:
+                        supabaseHeaders
+                }
+            );
+
+
+        if (!res.ok) {
+            throw new Error(
+                "Could not fetch views"
+            );
+        }
+
+
+        const data =
+            await res.json();
+
+
         if (data.length === 0) {
-            await fetch(`${SUPABASE_URL}/rest/v1/poem_views`, { method: "POST", headers: supabaseHeaders, body: JSON.stringify({ title: title, views: 1 }) });
+
+            await fetch(
+                `${SUPABASE_URL}/rest/v1/poem_views`,
+                {
+                    method:
+                        "POST",
+
+                    headers:
+                        supabaseHeaders,
+
+                    body:
+                        JSON.stringify({
+                            title:
+                                title,
+                            views:
+                                1
+                        })
+                }
+            );
+
         } else {
-            await fetch(`${SUPABASE_URL}/rest/v1/poem_views?title=eq.${encodeURIComponent(title)}`, { method: "PATCH", headers: supabaseHeaders, body: JSON.stringify({ views: data[0].views + 1 }) });
+
+            await fetch(
+                queryURL,
+                {
+                    method:
+                        "PATCH",
+
+                    headers:
+                        supabaseHeaders,
+
+                    body:
+                        JSON.stringify({
+                            views:
+                                Number(
+                                    data[0].views || 0
+                                ) + 1
+                        })
+                }
+            );
+
         }
-    } catch(e){ console.log("view error", e); }
+
+    } catch (error) {
+
+        console.log(
+            "Dynasty view error:",
+            error
+        );
+
+    }
+
 }
+
+
+/* ========================================
+   8. COMMENTS
+======================================== */
+
 async function addComment() {
-    const nameEl = document.getElementById('commentName');
-    const textEl = document.getElementById('commentText');
-    const name = nameEl? nameEl.value.trim() : "";
-    const text = textEl? textEl.value.trim() : "";
-    if(!name ||!text) return alert("Please fill both fields");
-    await fetch(`${SUPABASE_URL}/rest/v1/poem_comments`, { method: "POST", headers: supabaseHeaders, body: JSON.stringify({ title: window.currentPoemTitle, text: `${name}: ${text}` }) });
-    if(nameEl) nameEl.value = "";
-    if(textEl) textEl.value = "";
-    await renderComments();
-    await renderTrending();
+
+    const nameEl =
+        document.getElementById(
+            "commentName"
+        );
+
+    const textEl =
+        document.getElementById(
+            "commentText"
+        );
+
+
+    const name =
+        nameEl
+            ? nameEl.value.trim()
+            : "";
+
+
+    const text =
+        textEl
+            ? textEl.value.trim()
+            : "";
+
+
+    if (!name || !text) {
+
+        alert(
+            getTranslation(
+                "fillComments"
+            )
+        );
+
+        return;
+    }
+
+
+    if (!window.currentPoemTitle) {
+        return;
+    }
+
+
+    try {
+
+        const response =
+            await fetch(
+                `${SUPABASE_URL}/rest/v1/poem_comments`,
+                {
+                    method:
+                        "POST",
+
+                    headers:
+                        supabaseHeaders,
+
+                    body:
+                        JSON.stringify({
+                            title:
+                                window.currentPoemTitle,
+
+                            text:
+                                `${name}: ${text}`
+                        })
+                }
+            );
+
+
+        if (!response.ok) {
+            throw new Error(
+                "Comment could not be posted"
+            );
+        }
+
+
+        if (nameEl) {
+            nameEl.value = "";
+        }
+
+
+        if (textEl) {
+            textEl.value = "";
+        }
+
+
+        await renderComments();
+
+        await renderTrending();
+
+
+    } catch (error) {
+
+        console.log(
+            "Comment error:",
+            error
+        );
+
+        alert(
+            getTranslation(
+                "commentError"
+            )
+        );
+
+    }
+
 }
+
+
+/* ========================================
+   9. RENDER COMMENTS
+======================================== */
+
 async function renderComments() {
-    const list = document.getElementById('commentList');
-    if(!list ||!window.currentPoemTitle) return;
-    list.innerHTML = "Loading comments...";
+
+    const list =
+        document.getElementById(
+            "commentList"
+        );
+
+
+    if (
+        !list ||
+        !window.currentPoemTitle
+    ) {
+        return;
+    }
+
+
+    list.textContent =
+        getTranslation(
+            "loadingComments"
+        );
+
+
     try {
-        let res = await fetch(`${SUPABASE_URL}/rest/v1/poem_comments?title=eq.${encodeURIComponent(window.currentPoemTitle)}&order=created_at.desc`, { headers: supabaseHeaders });
-        let comments = await res.json();
-        if(comments.length === 0){ list.innerHTML = `<p style="color:#888;font-size:0.9rem;">No comments yet. Be the first.</p>`; return; }
-        list.innerHTML = comments.map(c => {
-            let parts = c.text.split(':'); let n = parts.shift(); let t = parts.join(':');
-            return `<div class="comment-item"><strong>${n} <span style="font-weight:400;color:#888">• ${new Date(c.created_at).toLocaleString()}</span></strong><p>${t}</p></div>`;
-        }).join('');
-    } catch(e) { list.innerHTML = "Failed to load comments"; }
+
+        const response =
+            await fetch(
+                `${SUPABASE_URL}/rest/v1/poem_comments?title=eq.${encodeURIComponent(window.currentPoemTitle)}&order=created_at.desc`,
+                {
+                    headers:
+                        supabaseHeaders
+                }
+            );
+
+
+        if (!response.ok) {
+            throw new Error(
+                "Could not load comments"
+            );
+        }
+
+
+        const comments =
+            await response.json();
+
+
+        if (
+            !Array.isArray(comments) ||
+            comments.length === 0
+        ) {
+
+            list.textContent =
+                getTranslation(
+                    "noComments"
+                );
+
+            return;
+        }
+
+
+        list.innerHTML = "";
+
+
+        comments.forEach(comment => {
+
+            const item =
+                document.createElement("div");
+
+            item.className =
+                "comment-item";
+
+
+            const strong =
+                document.createElement("strong");
+
+
+            const parts =
+                String(
+                    comment.text || ""
+                ).split(":");
+
+
+            const name =
+                parts.shift() || "";
+
+
+            const message =
+                parts.join(":");
+
+
+            strong.textContent =
+                name;
+
+
+            const date =
+                document.createElement("span");
+
+            date.style.fontWeight =
+                "400";
+
+            date.style.color =
+                "#888";
+
+
+            date.textContent =
+                ` • ${new Date(
+                    comment.created_at
+                ).toLocaleString()}`;
+
+
+            strong.appendChild(date);
+
+
+            const paragraph =
+                document.createElement("p");
+
+
+            paragraph.textContent =
+                message;
+
+
+            item.appendChild(
+                strong
+            );
+
+            item.appendChild(
+                paragraph
+            );
+
+
+            list.appendChild(
+                item
+            );
+
+        });
+
+
+    } catch (error) {
+
+        console.log(
+            "Comment loading error:",
+            error
+        );
+
+
+        list.textContent =
+            getTranslation(
+                "commentError"
+            );
+
+    }
+
 }
+
+
+/* ========================================
+   10. COMMENT COUNT
+======================================== */
+
 async function getCommentCount(title) {
+
     try {
-        let res = await fetch(`${SUPABASE_URL}/rest/v1/poem_comments?title=eq.${encodeURIComponent(title)}&select=id`, { headers: supabaseHeaders });
-        let data = await res.json();
-        return data.length;
-    } catch { return 0; }
+
+        const response =
+            await fetch(
+                `${SUPABASE_URL}/rest/v1/poem_comments?title=eq.${encodeURIComponent(title)}&select=id`,
+                {
+                    headers:
+                        supabaseHeaders
+                }
+            );
+
+
+        if (!response.ok) {
+            return 0;
+        }
+
+
+        const data =
+            await response.json();
+
+
+        return Array.isArray(data)
+            ? data.length
+            : 0;
+
+
+    } catch {
+
+        return 0;
+
+    }
+
 }
+
+
+/* ========================================
+   11. TRENDING
+======================================== */
+
 async function renderTrending() {
-    const section = document.getElementById('trendingSection');
-    const list = document.getElementById('trendingList');
-    if (!section ||!list) return;
+
+    const section =
+        document.getElementById(
+            "trendingSection"
+        );
+
+    const list =
+        document.getElementById(
+            "trendingList"
+        );
+
+
+    if (!section || !list) {
+        return;
+    }
+
+
     try {
-        let res = await fetch(`${SUPABASE_URL}/rest/v1/poem_views?order=views.desc&limit=3`, { headers: supabaseHeaders });
-        let sorted = await res.json();
-        if (sorted.length === 0) { section.style.display = 'none'; return; }
-        section.style.display = 'block';
-        list.innerHTML = '';
-        for (let row of sorted) {
-            let comments = await getCommentCount(row.title);
-            let card = document.createElement('div');
-            card.className = 'trending-card';
-            card.innerHTML = `<b>${row.title}</b><div class="trending-meta"><span>👁 ${row.views}</span><span>💬 ${comments}</span></div>`;
-            card.onclick = () => {
-                let idx = poems.findIndex(p => p.title === row.title);
-                if(idx > -1) openPoem(idx);
-            };
-            list.appendChild(card);
+
+        const response =
+            await fetch(
+                `${SUPABASE_URL}/rest/v1/poem_views?order=views.desc&limit=3`,
+                {
+                    headers:
+                        supabaseHeaders
+                }
+            );
+
+
+        if (!response.ok) {
+            throw new Error(
+                "Trending failed"
+            );
         }
-    } catch(e) { console.log(e); }
+
+
+        const sorted =
+            await response.json();
+
+
+        if (
+            !Array.isArray(sorted) ||
+            sorted.length === 0
+        ) {
+
+            section.style.display =
+                "none";
+
+            return;
+        }
+
+
+        section.style.display =
+            "block";
+
+
+        list.innerHTML = "";
+
+
+        for (
+            const row of sorted
+        ) {
+
+            const comments =
+                await getCommentCount(
+                    row.title
+                );
+
+
+            const card =
+                document.createElement(
+                    "div"
+                );
+
+
+            card.className =
+                "trending-card";
+
+
+            const title =
+                document.createElement(
+                    "b"
+                );
+
+
+            title.textContent =
+                row.title;
+
+
+            const meta =
+                document.createElement(
+                    "div"
+                );
+
+
+            meta.className =
+                "trending-meta";
+
+
+            const views =
+                document.createElement(
+                    "span"
+                );
+
+
+            views.textContent =
+                `👁 ${row.views} ${getTranslation("views")}`;
+
+
+            const commentCount =
+                document.createElement(
+                    "span"
+                );
+
+
+            commentCount.textContent =
+                `💬 ${comments} ${getTranslation("comments")}`;
+
+
+            meta.appendChild(
+                views
+            );
+
+            meta.appendChild(
+                commentCount
+            );
+
+
+            card.appendChild(
+                title
+            );
+
+            card.appendChild(
+                meta
+            );
+
+
+            card.addEventListener(
+                "click",
+                () => {
+
+                    const index =
+                        poems.findIndex(
+                            poem =>
+                                poem.title ===
+                                row.title
+                        );
+
+
+                    if (index !== -1) {
+                        openPoem(index);
+                    }
+
+                }
+            );
+
+
+            list.appendChild(
+                card
+            );
+
+        }
+
+
+    } catch (error) {
+
+        console.log(
+            "Trending error:",
+            error
+        );
+
+    }
+
 }
-document.addEventListener('DOMContentLoaded', renderTrending);
-const eyes = document.querySelectorAll(".eye");
-document.addEventListener("mousemove", event => {
-    eyes.forEach(eye => {
-        const pupil = eye.querySelector(".pupil");
-        if (!pupil) return;
-        const rect = eye.getBoundingClientRect();
-        const centerX = rect.left + rect.width / 2;
-        const centerY = rect.top + rect.height / 2;
-        const angle = Math.atan2(event.clientY - centerY, event.clientX - centerX);
-        const distance = Math.min(9, Math.hypot(event.clientX - centerX, event.clientY - centerY) / 12);
-        const x = Math.cos(angle) * distance;
-        const y = Math.sin(angle) * distance;
-        pupil.style.transform = `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))`;
-    });
-});
-const themeButtons = document.querySelectorAll("[data-theme]");
+
+
+document.addEventListener(
+    "DOMContentLoaded",
+    () => {
+        renderTrending();
+    }
+);
+
+
+/* ========================================
+   12. EYES FOLLOW MOUSE
+======================================== */
+
+const eyes =
+    document.querySelectorAll(
+        ".eye"
+    );
+
+
+document.addEventListener(
+    "mousemove",
+    event => {
+
+        eyes.forEach(eye => {
+
+            const pupil =
+                eye.querySelector(
+                    ".pupil"
+                );
+
+
+            if (!pupil) {
+                return;
+            }
+
+
+            const rect =
+                eye.getBoundingClientRect();
+
+
+            const centerX =
+                rect.left +
+                rect.width / 2;
+
+
+            const centerY =
+                rect.top +
+                rect.height / 2;
+
+
+            const angle =
+                Math.atan2(
+                    event.clientY -
+                        centerY,
+
+                    event.clientX -
+                        centerX
+                );
+
+
+            const distance =
+                Math.min(
+                    9,
+
+                    Math.hypot(
+                        event.clientX -
+                            centerX,
+
+                        event.clientY -
+                            centerY
+                    ) / 12
+                );
+
+
+            const x =
+                Math.cos(angle) *
+                distance;
+
+
+            const y =
+                Math.sin(angle) *
+                distance;
+
+
+            pupil.style.transform =
+                `translate(
+                    calc(-50% + ${x}px),
+                    calc(-50% + ${y}px)
+                )`;
+
+        });
+
+    }
+);
+
+
+/* ========================================
+   13. THEME
+======================================== */
+
+const themeButtons =
+    document.querySelectorAll(
+        "[data-theme]"
+    );
+
+
 themeButtons.forEach(button => {
-    button.addEventListener("click", () => {
-        const theme = button.dataset.theme;
-        if (theme === "light") { document.body.classList.add("light"); }
-        else { document.body.classList.remove("light"); }
-        themeButtons.forEach(btn => { btn.classList.remove("selected"); });
-        button.classList.add("selected");
-    });
-});
-const textureButtons = document.querySelectorAll("[data-texture]");
-textureButtons.forEach(button => {
-    button.addEventListener("click", () => {
-        const texture = button.dataset.texture;
-        document.body.classList.remove("texture-dots","texture-grid","texture-plain");
-        if (texture === "dots") document.body.classList.add("texture-dots");
-        if (texture === "grid") document.body.classList.add("texture-grid");
-        if (texture === "plain") document.body.classList.add("texture-plain");
-    });
-});
-const languageButtons = document.querySelectorAll(".language-card");
-function applyLanguage(language) {
-    const selectedLanguage = translations[language]? language : "en";
-    const dictionary = translations[selectedLanguage];
-    document.querySelectorAll("[data-i18n]").forEach(element => {
-        const key = element.dataset.i18n;
-        if (dictionary[key]) { element.textContent = dictionary[key]; }
-    });
-    languageButtons.forEach(button => {
-        button.classList.remove("selected-language");
-        if (button.dataset.language === selectedLanguage) { button.classList.add("selected-language"); }
-    });
-    document.documentElement.lang = selectedLanguage;
-    localStorage.setItem("dynastyLanguage", selectedLanguage);
-}
-languageButtons.forEach(button => {
-    button.addEventListener("click", () => {
-        const language = button.dataset.language;
-        applyLanguage(language);
-    });
-});
-const copyLink = document.getElementById("copyLink");
-if (copyLink) {
-    copyLink.addEventListener("click", async () => {
-        const originalHTML = copyLink.innerHTML;
-        try {
-            await navigator.clipboard.writeText(window.location.href);
-            copyLink.innerHTML = `<i class="fa-solid fa-check"></i><span> Copied!</span>`;
-            setTimeout(() => { copyLink.innerHTML = originalHTML; }, 2000);
-        } catch {
-            alert("Copy failed. Please copy the URL manually.");
+
+    button.addEventListener(
+        "click",
+        () => {
+
+            const theme =
+                button.dataset.theme;
+
+
+            if (theme === "light") {
+
+                document.body.classList.add(
+                    "light"
+                );
+
+            } else {
+
+                document.body.classList.remove(
+                    "light"
+                );
+
+            }
+
+
+            themeButtons.forEach(btn => {
+                btn.classList.remove(
+                    "selected"
+                );
+            });
+
+
+            button.classList.add(
+                "selected"
+            );
+
         }
-    });
-}
+    );
+
+});
+
+
+/* ========================================
+   14. BACKGROUND TEXTURES
+======================================== */
+
+const textureButtons =
+    document.querySelectorAll(
+        "[data-texture]"
+    );
+
+
+const textureClasses = [
+    "texture-dots",
+    "texture-grid",
+    "texture-plain",
+    "texture-diagonal",
+    "texture-crosshatch",
+    "texture-waves",
+    "texture-blueprint",
+    "texture-noise",
+    "texture-hexagons"
+];
+
+
+textureButtons.forEach(button => {
+
+    button.addEventListener(
+        "click",
+        () => {
+
+            const texture =
+                button.dataset.texture;
+
+
+            document.body.classList.remove(
+                ...textureClasses
+            );
+
+
+            if (
+                texture &&
+                texture !== "plain"
+            ) {
+
+                document.body.classList.add(
+                    `texture-${texture}`
+                );
+
+            }
+
+
+            textureButtons.forEach(
+                btn => {
+
+                    btn.classList.remove(
+                        "selected"
+                    );
+
+                }
+            );
+
+
+            button.classList.add(
+                "selected"
+            );
+
+        }
+    );
+
+});
+
+
+/* ========================================
+   15. LANGUAGE SYSTEM
+======================================== */
+
+const languageButtons =
+    document.querySelectorAll(
+        ".language-card"
+    );
+
+
 function getTranslation(key) {
-    const currentLanguage = localStorage.getItem("dynastyLanguage") || "en";
-    return (translations[currentLanguage]?.[key] || translations.en[key] || key);
+
+    const currentLanguage =
+        localStorage.getItem(
+            "dynastyLanguage"
+        ) || "en";
+
+
+    return (
+        translations[currentLanguage]?.[key] ||
+        translations.en[key] ||
+        key
+    );
+
 }
-const savedLanguage = localStorage.getItem("dynastyLanguage");
-if (savedLanguage && translations[savedLanguage]) { applyLanguage(savedLanguage); }
-else { applyLanguage("en"); }
+
+
+function applyLanguage(language) {
+
+    const selectedLanguage =
+        translations[language]
+            ? language
+            : "en";
+
+
+    const dictionary =
+        translations[
+            selectedLanguage
+        ];
+
+
+    /* ------------------------------------
+       NORMAL TEXT
+    ------------------------------------ */
+
+    document
+        .querySelectorAll(
+            "[data-i18n]"
+        )
+        .forEach(element => {
+
+            const key =
+                element.dataset.i18n;
+
+
+            if (
+                dictionary[key] !==
+                undefined
+            ) {
+
+                element.textContent =
+                    dictionary[key];
+
+            }
+
+        });
+
+
+    /* ------------------------------------
+       INPUT PLACEHOLDERS
+    ------------------------------------ */
+
+    document
+        .querySelectorAll(
+            "[data-i18n-placeholder]"
+        )
+        .forEach(element => {
+
+            const key =
+                element.dataset
+                    .i18nPlaceholder;
+
+
+            if (
+                dictionary[key] !==
+                undefined
+            ) {
+
+                element.placeholder =
+                    dictionary[key];
+
+            }
+
+        });
+
+
+    /* ------------------------------------
+       LANGUAGE SELECTION
+    ------------------------------------ */
+
+    languageButtons.forEach(
+        button => {
+
+            button.classList.remove(
+                "selected"
+            );
+
+            button.classList.remove(
+                "selected-language"
+            );
+
+
+            if (
+                button.dataset.language ===
+                selectedLanguage
+            ) {
+
+                button.classList.add(
+                    "selected"
+                );
+
+            }
+
+        }
+    );
+
+
+    document.documentElement.lang =
+        selectedLanguage;
+
+
+    localStorage.setItem(
+        "dynastyLanguage",
+        selectedLanguage
+    );
+
+
+    /* ------------------------------------
+       LIKE TEXT
+    ------------------------------------ */
+
+    updateLikeButtonText();
+
+
+    /* ------------------------------------
+       COMMENTS
+    ------------------------------------ */
+
+    if (window.currentPoemTitle) {
+
+        renderComments();
+
+    }
+
+
+    /* ------------------------------------
+       TRENDING
+    ------------------------------------ */
+
+    renderTrending();
+
+}
+
+
+/* ========================================
+   LANGUAGE BUTTON EVENTS
+======================================== */
+
+languageButtons.forEach(button => {
+
+    button.addEventListener(
+        "click",
+        () => {
+
+            const language =
+                button.dataset.language;
+
+
+            if (language) {
+
+                applyLanguage(
+                    language
+                );
+
+            }
+
+        }
+    );
+
+});
+
+
+/* ========================================
+   16. COPY DYNASTY LINK
+======================================== */
+
+const copyLink =
+    document.getElementById(
+        "copyLink"
+    );
+
+
+if (copyLink) {
+
+    copyLink.addEventListener(
+        "click",
+        async () => {
+
+            const originalHTML =
+                copyLink.innerHTML;
+
+
+            try {
+
+                await navigator.clipboard
+                    .writeText(
+                        window.location.href
+                    );
+
+
+                copyLink.innerHTML = `
+                    <i class="fa-solid fa-check"></i>
+                    <span>
+                        ${getTranslation(
+                            "copied"
+                        )}
+                    </span>
+                `;
+
+
+                setTimeout(
+                    () => {
+
+                        copyLink.innerHTML =
+                            originalHTML;
+
+                    },
+                    2000
+                );
+
+
+            } catch {
+
+                alert(
+                    getTranslation(
+                        "copied"
+                    )
+                );
+
+            }
+
+        }
+    );
+
+}
+
+
+/* ========================================
+   17. LIKE SYSTEM
+======================================== */
+
+let likedPoems = {};
+
+
+try {
+
+    likedPoems =
+        JSON.parse(
+            localStorage.getItem(
+                "dynastyLikedPoems"
+            )
+        ) || {};
+
+} catch {
+
+    likedPoems = {};
+
+}
+
+
+const likeButton =
+    document.getElementById(
+        "likePoem"
+    );
+
+
+function updateLikeButtonText() {
+
+    if (!likeButton) {
+        return;
+    }
+
+
+    const textElement =
+        likeButton.querySelector(
+            "[data-i18n]"
+        );
+
+
+    if (!textElement) {
+        return;
+    }
+
+
+    const isLiked =
+        !!likedPoems[
+            window.currentPoemTitle
+        ];
+
+
+    textElement.textContent =
+        getTranslation(
+            isLiked
+                ? "liked"
+                : "like"
+        );
+
+}
+
+
+function updateLikeButtonVisual() {
+
+    if (!likeButton) {
+        return;
+    }
+
+
+    const isLiked =
+        !!likedPoems[
+            window.currentPoemTitle
+        ];
+
+
+    likeButton.classList.toggle(
+        "liked",
+        isLiked
+    );
+
+
+    const icon =
+        likeButton.querySelector(
+            "i"
+        );
+
+
+    if (icon) {
+
+        icon.className =
+            isLiked
+                ? "fa-solid fa-heart"
+                : "fa-regular fa-heart";
+
+    }
+
+
+    updateLikeButtonText();
+
+}
+
+
+if (likeButton) {
+
+    likeButton.addEventListener(
+        "click",
+        () => {
+
+            const title =
+                window.currentPoemTitle;
+
+
+            if (!title) {
+                return;
+            }
+
+
+            likedPoems[title] =
+                !likedPoems[title];
+
+
+            localStorage.setItem(
+                "dynastyLikedPoems",
+                JSON.stringify(
+                    likedPoems
+                )
+            );
+
+
+            updateLikeButtonVisual();
+
+        }
+    );
+
+}
+
+
+/* ========================================
+   18. SHARE POEM
+======================================== */
+
+const sharePoemButton =
+    document.getElementById(
+        "sharePoem"
+    );
+
+
+if (sharePoemButton) {
+
+    sharePoemButton.addEventListener(
+        "click",
+        async () => {
+
+            const title =
+                window.currentPoemTitle ||
+                "Dynasty Poem";
+
+
+            const shareData = {
+
+                title:
+                    title,
+
+                text:
+                    `Read "${title}" on Dynasty.`,
+
+                url:
+                    window.location.href
+
+            };
+
+
+            try {
+
+                if (
+                    navigator.share
+                ) {
+
+                    await navigator.share(
+                        shareData
+                    );
+
+                    return;
+
+                }
+
+
+                throw new Error(
+                    "Web Share unavailable"
+                );
+
+
+            } catch (error) {
+
+                try {
+
+                    await navigator.clipboard
+                        .writeText(
+                            window.location.href
+                        );
+
+
+                    alert(
+                        getTranslation(
+                            "poemLinkCopied"
+                        )
+                    );
+
+
+                } catch {
+
+                    alert(
+                        getTranslation(
+                            "poemLinkCopied"
+                        )
+                    );
+
+                }
+
+            }
+
+        }
+    );
+
+}
+
+
+/* ========================================
+   19. POEM SEARCH
+   TITLES ONLY
+======================================== */
+
+const poemSearch =
+    document.getElementById(
+        "poemSearch"
+    );
+
+
+if (poemSearch) {
+
+    poemSearch.addEventListener(
+        "input",
+        () => {
+
+            const searchTerm =
+                poemSearch.value
+                    .toLowerCase()
+                    .trim();
+
+
+            const poemItems =
+                document.querySelectorAll(
+                    ".poem-title-btn"
+                );
+
+
+            poemItems.forEach(
+                (item, index) => {
+
+                    const poem =
+                        poems[index];
+
+
+                    if (!poem) {
+                        return;
+                    }
+
+
+                    const title =
+                        poem.title
+                            .toLowerCase();
+
+
+                    item.style.display =
+                        title.includes(
+                            searchTerm
+                        )
+                            ? ""
+                            : "none";
+
+                }
+            );
+
+        }
+    );
+
+}
+
+
+/* ========================================
+   20. STARTUP
+======================================== */
+
+function initializeDynasty() {
+
+    const savedLanguage =
+        localStorage.getItem(
+            "dynastyLanguage"
+        );
+
+
+    if (
+        savedLanguage &&
+        translations[
+            savedLanguage
+        ]
+    ) {
+
+        applyLanguage(
+            savedLanguage
+        );
+
+    } else {
+
+        applyLanguage("en");
+
+    }
+
+
+    updateLikeButtonVisual();
+
+}
+
+
+if (
+    document.readyState ===
+    "loading"
+) {
+
+    document.addEventListener(
+        "DOMContentLoaded",
+        initializeDynasty
+    );
+
+} else {
+
+    initializeDynasty();
+
+}
