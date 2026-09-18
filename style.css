@@ -1546,3 +1546,58 @@ body.light .poem-action-btn:hover {
         padding: 30px 20px;
     }
 }
+/* === DYNASTY PROFESSIONAL READERS - KELS & RACHEL === */
+.readers-choir {
+    margin: 22px 0;
+    padding: 20px;
+    border-radius: 24px;
+    background: linear-gradient(135deg, #fffaf5 0%, #fff0f5 100%);
+    border: 1px solid rgba(238,9,121,0.12);
+}
+.choir-label {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.15rem;
+    text-align: center;
+    margin-bottom: 16px;
+    color: #6b4a5a;
+    letter-spacing: 0.3px;
+}
+.readers-row { display:flex; gap:14px; justify-content:center; }
+.reader-card {
+    flex:1;
+    max-width:190px;
+    background: white;
+    border-radius: 20px;
+    padding: 14px 10px;
+    text-align: center;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.35s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+.reader-card:hover { transform: translateY(-4px); box-shadow: 0 10px 25px rgba(0,0,0,0.08); }
+.reader-card.active {
+    border-color: #ee0979;
+    background: linear-gradient(135deg, #ffffff, #fff0f6);
+    box-shadow: 0 10px 30px rgba(238,9,121,0.25);
+    transform: translateY(-2px) scale(1.02);
+}
+.reader-img {
+    width: 76px; height: 76px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid white;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.18);
+    margin: 0 auto 10px;
+    display: block;
+}
+.reader-info h4 { margin:0; font-size:0.9rem; letter-spacing:1.2px; font-weight:800; color:#111; }
+.reader-info span { font-size:0.72rem; opacity:0.6; font-weight:500; }
+.stop-choir {
+    display:block; margin:16px auto 0;
+    background: #111; color: white; border: none;
+    padding: 10px 24px; border-radius: 30px;
+    font-size: 0.8rem; font-weight:700; cursor:pointer;
+    letter-spacing:0.5px;
+}
