@@ -737,6 +737,21 @@
                 <div class="poem-signature">
                     — kels
                 </div>
+                <!-- KELS & RACHEL REAL VOICES -->
+                <div class="readers-wrap" style="margin: 25px 0; padding: 20px; background: rgba(255,255,255,0.05); border-radius: 16px; border: 1px solid rgba(255,255,255,0.1);">
+                  <p style="text-align:center; opacity:0.6; font-size:12px; letter-spacing:1px; margin-bottom:12px;">LISTEN WITH</p>
+                  <div class="readers" style="display:flex; gap:12px; justify-content:center;">
+                    <div class="reader-card" id="readerKels" onclick="speakWith('kels')" style="display:flex; align-items:center; gap:10px; padding:10px 16px; border-radius:12px; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); cursor:pointer;">
+                      <img src="https://i.pravatar.cc/100?img=15" style="width:38px; height:38px; border-radius:50%;" alt="Kels">
+                      <div><strong style="font-size:14px;">Kels</strong><span style="font-size:11px; opacity:0.6; display:block;">Deep • Comforting</span></div>
+                    </div>
+                    <div class="reader-card" id="readerRachel" onclick="speakWith('rachel')" style="display:flex; align-items:center; gap:10px; padding:10px 16px; border-radius:12px; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); cursor:pointer;">
+                      <img src="https://i.pravatar.cc/100?img=32" style="width:38px; height:38px; border-radius:50%;" alt="Rachel">
+                      <div><strong style="font-size:14px;">Rachel</strong><span style="font-size:11px; opacity:0.6; display:block;">Soft • Emotional</span></div>
+                    </div>
+                  </div>
+                  <button id="stopBtn" onclick="stopPoem()" style="display:none; margin:15px auto 0; padding:8px 20px; background:#ff4444; color:white; border:none; border-radius:20px; cursor:pointer; font-size:13px;">■ Stop Reading</button>
+                </div>
 
 
 
