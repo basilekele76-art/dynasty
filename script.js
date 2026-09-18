@@ -2506,3 +2506,72 @@ if (
     initializeDynasty();
 
 }
+// ========== KELS & RACHEL - ELEVENLABS REAL HUMAN ==========
+const ELEVEN_API_KEY = "sk_783cfc07c635594a087952ba2abaa1eaffbb3c58c4b27c26"; // <-- paste your key here
+
+const VOICES = {
+  kels: "pNInz6obpgDQGcFmaJgB", // Adam - Deep, comforting male
+  rachel: "21m00Tcm4TlvDq8ikWAM"  // Rachel - Soft, gentle emotional female
+};
+
+let currentAudio = null;
+
+async function speakWith(who) {
+    const title = document.getElementById('poemTitle').innerText;
+    const text = document.getElementById('poemText').innerText;
+    const fullText = title + "... " + text;
+
+    if (currentAudio) { currentAudio.pause(); currentAudio = null; }
+
+    document.querySelectorAll('.reader-card').forEach(c => c.classList.remove('active'));
+    document.getElementById(who === 'kels'? 'readerKels' : 'readerRachel').classList.add('active');
+    document.getElementById('stopBtn').style.display = 'block';
+    document.getElementById('stopBtn').innerHTML = "● Loading voice...";
+
+    try {
+        const response = await fetch(`https://api.elevenlabs.io/v1/text-to-speech/${VOICES[who]}`, {
+            method: "POST",
+            headers: {
+                "xi-api-key": ELEVEN_API_KEY,
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                text: fullText,
+                model_id: "eleven_multilingual_v2",
+                voice_settings: {
+                    stability: who === 'kels' ? 0.65 : 0.55,
+                    similarity_boost: 0.75,
+                    style: 0.45,
+                    use_speaker_boost: true
+                }
+            })
+        });
+
+        if (!response.ok) throw new Error("API failed");
+
+        const audioBlob = await response.blob();
+        const audioUrl = URL.createObjectURL(audioBlob);
+        currentAudio = new Audio(audioUrl);
+        
+        document.getElementById('stopBtn').innerHTML = "■ Stop Reading";
+        currentAudio.play();
+
+        currentAudio.onended = () => stopPoem();
+
+    } catch (err) {
+        alert("ElevenLabs error: Check your API key or internet. Falling back to browser voice.");
+        // Fallback to old browser voice if fails
+        const utt = new SpeechSynthesisUtterance(fullText);
+        utt.rate = who === 'kels' ? 0.8 : 0.85;
+        utt.pitch = who === 'kels' ? 0.75 : 1.15;
+        window.speechSynthesis.speak(utt);
+        document.getElementById('stopBtn').innerHTML = "■ Stop Reading";
+    }
+}
+
+function stopPoem() {
+    if (currentAudio) { currentAudio.pause(); currentAudio = null; }
+    window.speechSynthesis.cancel();
+    document.querySelectorAll('.reader-card').forEach(c => c.classList.remove('active'));
+    document.getElementById('stopBtn').style.display = 'none';
+}
